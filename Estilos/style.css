@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-Primaria: Playwrite DK Uloopet Guides, cursive;
+    --font-Secundaria: Playfair Display, serif;
+    --font-principal: "Lora", serif;
+    --Cinza-Cinza: #3a3a3a;
+    --cinza: #d3d3d3;
+    --Bege-claro: #F4F1EE;
+    --Azul-petróleo: #0F4C5C;
+    --White-Smoke-Fumaça-Branca: #f5f5f5;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-delay-1 { transition-delay: 0.1s; }
+.scroll-animate-delay-2 { transition-delay: 0.2s; }
+.scroll-animate-delay-3 { transition-delay: 0.3s; }
+.scroll-animate-delay-4 { transition-delay: 0.4s; }
+.scroll-animate-delay-5 { transition-delay: 0.5s; }
+
+body {
+    font-family: regular 400 1rem var(--font-principal);
+    font-size: 1.2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.NavInicial{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.LOGO-Imagem{
+    width: 20%;
+    display: flex;
+    margin-top: -6vh;
+    margin-left: 1vw;
+}
+.LogoKelCV{
+    width: 100%;
+    display: flex;
+    margin-top: 5vh;
+    justify-content: flex-end; 
+}
+.ULInicial{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    list-style: none;
+}
+.LiInicial{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-left: 5vw;
+    padding: 1vw;
+    list-style: none;
+}
+.LinkInicio{
+    color: #080808;
+    text-decoration: none;
+}
+.LinkInicio:hover{
+   color: #0F4C5C;
+   box-shadow: 0px 1px 0px 0px rgba(0,0,0);
+   
+}
+.Pmenu{
+    margin-left: 1.5vw;
+    font-size: 1.2rem;
+}
+
+.container {
+    display: flex;
+    margin-top: 1vh;
+    border-radius: 2vh;
+    margin-bottom: 2vh;
+}
+
+.DivEtapa1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.Titulo {
+    font-family: var(--font-Secundaria);
+    font-weight: 500;
+    color:black;
+}
+
+.Descrição {
+    margin-top: 2vh;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--font-Primaria);
+}
+h2{
+    font-size: 1.5rem;
+}
+
+.formulario1{
+    width: 35vw;
+    display: flex;
+    padding: 3vh;
+    margin-top: 0vh;
+    font-family: var(--font-principal);
+    font-weight: 100;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 2vh;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    font-size: 1rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.section1 {
+    width: 50vw;
+    padding: 3vh;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    margin-top: 0vh;
+    margin-left: 2vh;
+    border-radius: 2vh;
+    flex-direction: column;
+    font-size: 13pt;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.795), rgba(255, 255, 255, 0.801)), url(Imagens/IconFundo.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    backface-visibility: visible;
+    box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
+}
+
+.Nome-Cv {
+    text-align: center;
+}
+
+.Estados {
+    padding: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.Cidade-Cv {
+    margin-top: 2vh;
+}
+
+.email-Cv {
+    font-size: 1em;
+    margin-top: 1vh;
+}
+
+.Whatsapp-Cv {
+    font-size: 1em;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.LabelRedeSocial {
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+}
+.A4Social{
+  display: none;
+  margin-top: 2vh;
+}
+.InputGithub, .InputLinkedIn{
+   width: -webkit-fill-available;
+}
+
+.rede-social {
+    margin-top: 1vh;
+}
+#RadioGithub {
+    margin-top: 1vh;
+}
+
+#RadioLinkedIn {
+    margin-top: 1vh;
+    margin-left: 1vw;
+}
+
+#Todas {
+    margin-top: 1vh;
+}
+
+#InputGithub {
+    display: none;
+}
+
+#InputLinkedIn {
+    display: none;
+}
+
+.DivEtapa2 {
+    display: none;
+    flex-direction: column;
+}
+
+textarea {
+    padding: 5px;
+}
+
+#Objetivos {
+    text-align: 1vw;
+}
+.DivEnsinoMédio{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.DivIformaçãoEscola{
+    display: none;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    flex-direction: column;
+}
+
+.Colegio{
+    width: -webkit-fill-available;
+}
+.DataDeFormação{
+    width: -webkit-fill-available;
+}
+
+.Objetivo-Cv {
+    margin-top: 2vh;
+    display: none;
+    margin-bottom: -1.5vh;
+}
+
+.DivFormacao {
+    display: flex;
+    flex-direction: column;
+}
+
+.Formacao-Cv {
+    margin-top: 3vh;
+    display: none;
+}
+.DivNomeEscola{
+    display: none;
+    flex-direction: column;
+}
+
+.formCurso1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+.formCurso2{
+   display: none;
+   flex-direction: column;
+   margin-top: 1vh; 
+}
+#containerCampos{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+.bloco-instituicao{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+.formulario2{
+    width: 35vw;
+    display: none;
+    padding: 3vh;
+    margin-top: 0vh;
+    font-family: var(--font-principal);
+    font-weight: 100;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 2vh;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
+}
+.ExperienciaCv{
+    display: none;
+    margin-top: 1vh;
+}
+.DescricaoAtividades{
+    display: list-item;
+    margin-top: 1vh;
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+}
+.formulario3{
+    width: 30vw;
+    display: none;
+    padding: 3vh;
+    margin-top: 0vh;
+    font-family: var(--font-principal);
+    font-weight: 100;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 2vh;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
+}
+.Habilitação{
+    margin-top: -2vh;   
+}
+.InputHabilitação{
+    cursor: pointer;
+}
+.LabelHabilitaçã{
+    cursor: pointer;
+}
+.InputOutras{
+    display: none;
+    margin-top: 1vh;
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    width: -webkit-fill-available;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+.DivBtnPrint {
+    display: flex;
+    gap: 10px;
+    margin-top: 2vh;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 2vh 0;
+}
+
+/*-----------------------------footer-------------------------------------------*/
+footer {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.Div1 {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.Div2 {
+    flex: 1;
+    min-width: 220px;
+}
+
+.kelCv {
+    margin-bottom: 10px;
+}
+
+.ParagrafoFooter {
+    color: #080808;
+}
+
+.LinkFooter {
+    flex: 1;
+    min-width: 180px;
+}
+.H3link{
+    margin-bottom:10px;
+}
+.Ulfooter{
+    list-style:none; 
+    padding:0;
+}
+.Linka{
+    color:black; 
+    text-decoration:none;
+}
+.Linka:hover{
+   color: #0F4C5C;
+   box-shadow: 0px 1px 0px 0px rgba(0,0,0);
+}
+.DivSuporte{
+    flex:1; 
+    min-width:180px;
+}
+.H3Suporte{
+    margin-bottom:10px;
+}
+.UlSuporte{
+    list-style:none; 
+    padding:0;
+}
+.LinkSuporte{
+    color:black; 
+    text-decoration:none;
+}
+.LinkSuporte:hover{
+   color: #0F4C5C;
+   box-shadow: 0px 1px 0px 0px rgba(0,0,0);
+}
+.DivSociais{
+    flex:1; 
+    min-width:180px;
+}
+.H3Sociais{
+    margin-bottom:10px;
+}
+.Psociais{
+    color:black;
+}
+.Link-InstagramFooter{
+     color:black;
+     text-decoration: none;
+}
+.DivFooter2{
+    text-align:center; 
+    margin-top:30px; 
+    border-top:1px solid #374151; 
+    padding-top:20px; 
+    color:black;
+}
+
+/* ------------------- Seção de Vagas de Emprego --------------------- */
+.section-vagas {
+    width: 70vw;
+    padding: 4vh 3vh;
+    margin: 4vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, #f5f7fa 10%, #04477a 90%);
+    border-radius: 2vh;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.959);
+}
+
+.TituloVagas {
+    font-family: var(--font-Secundaria);
+    font-weight: 500;
+    color: var(--Azul-petróleo);
+    margin-bottom: 1vh;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.DescricaoVagas {
+    color: var(--Cinza-Cinza);
+    font-size: 1.2rem;
+    margin-bottom: 4vh;
+    text-align: center;
+    max-width: 600px;
+}
+.btn-acessar {
+    background: var(--Azul-petróleo);
+    color: white;
+    border: none;
+    padding: 1.5vh 4vh;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 76, 92, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn-acessar:hover {
+    background: #0a3c4a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(15, 76, 92, 0.4);
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--Azul-petróleo);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-btn:hover {
+    background: #0a3c4a;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carrossel-btn-prev {
+    left: 1vw;
+}
+
+.carrossel-btn-next {
+    right: 1vw;
+}
+
+.carrossel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin-top: 2vh;
+}
+
+.carrossel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+
+.carrossel-dot.active {
+    background: var(--Azul-petróleo);
+    transform: scale(1.2);
+}
+
+.carrossel-dot:hover {
+    background: #0a3c4a;
+  }
+
+.destaques-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 3vh;
+  width: 100%;
+  padding: 1vh 2vh;
+  
+}
+
+   .destaque-card {
+   background: rgb(233, 235, 234);
+   border-radius: 2vh;
+   overflow: hidden;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+   transition: transform 0.5s ease, box-shadow 0.1s ease;
+   flex-shrink: 0;
+   width: 80%;
+   max-width: 300px;
+   position: relative;
+   margin-left: -0.3vw;
+ }
+
+  .destaque-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .destaque-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .destaque-imagem {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: flex;
+    margin-top: 2vh;
+    
+  }
+
+  .destaque-content {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .destaque-titulo {
+    font-family: var(--font-Secundaria);
+    font-size: 1.5rem;
+    color: var(--Azul-petróleo);
+    margin-bottom: 1vh;
+  }
+
+  .destaque-descricao {
+    color: var(--Cinza-Cinza);
+    font-size: 1rem;
+    margin-bottom: 2vh;
+    line-height: 1.5;
+  }
+
+/*----------------------------------------------------
+   MEDIA PRINT - IMPRIMIR SÓ SECTION1 EM A4
+-----------------------------------------------------*/
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 1.5cm;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+    .NavInicial{
+        display: none;
+    }
+    
+    .container {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .formulario1, .formulario2, .formulario3, 
+    .Titulo, .Descrição, footer, 
+    .BtnImprimir, .DivBtnPrint {
+        display: none !important;
+    }
+    
+    .section1 {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .section1, .section1 * {
+        color: black !important;
+    }
+    .section-vagas{
+        display: none;
+    }
+}

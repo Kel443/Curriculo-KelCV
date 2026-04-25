@@ -1,0 +1,300 @@
+/*-----------------------------Estilos de Botões Geral-----------------------------*/
+button {
+    font-size: 1rem;
+    margin-top: 2vh;
+    border-radius: 5px;
+    padding: 1vh;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+}
+/*-----------------------------Botoes Etapa 1------------------------*/
+.BtnInput{
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.Btn-submit1 {
+    width: -webkit-fill-available;
+}
+/*-----------------------------Botoes Etapa 2--------------------------*/
+.DivBtnEtapa2 {
+    display: flex;
+    gap: 10px;
+}
+.InptRadioEsinoMédio1{
+    padding: 15px 30px;
+}
+.InptRadioEsinoMédio2{
+  margin-left: -1vw;
+  padding: 15px 30px;
+  border: 1px solid black;
+}
+.BtnAdicionar {
+    width: -webkit-fill-available;
+}
+.Btn-submit2 {
+    width: -webkit-fill-available;
+}
+.Btn-Voltar {
+    width: -webkit-fill-available;
+}
+/*-----------------------------Botoes Etapa 3-----------------------------*/
+.BtnAdicionarExp {
+    width: -webkit-fill-available;
+    margin-top: 1vh;
+    margin-bottom: 1.5vh;
+}
+.BtnCompleto{
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} 
+.BtnCompleto:hover{
+  background-color: #4304d8;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+} 
+.BtnIncompleto{
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.BtnIncompleto:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+.BtnInputA, .BtnInputB, .BtnInputAB{
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.BtnInputA:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+} 
+
+.BtnInputB:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+.BtnInputAB:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+} 
+.BtnInput:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+} 
+.BtnInputOutras{
+  width: -webkit-fill-available;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2vh;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.BtnInputOutras:hover{
+  background-color: #3700b3;
+  color:white ;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+.BtnAdicionarHabili {
+    width: -webkit-fill-available;
+    margin-top: 1vh;
+}
+.Btn-submit3 {
+    margin-top: 2vh;
+    width: -webkit-fill-available;
+}
+/*-----------------------------Botoes de Impressão------------------------------*/
+.BtnImprimir {
+    display: none;
+    margin-top: 2vh;
+    width: -webkit-fill-available;
+}
+.BtnPrintVoltar {
+    display: none;
+    margin-top: 2vh;
+    width: -webkit-fill-available;
+}
+.BtnFinalizar {
+    display: none;
+    margin-top: 2vh;
+    width: -webkit-fill-available;
+}
+/*-----------------------------Efeito Botão Adcionar Curso----------------------*/
+.BtnADDCurso{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem;
+}
+/*----------------------Efeito Botão Adcionar Experiencia------------------------*/
+.BtnAddExperiencia{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem;  
+}
+/*----------------------Efeitos Botão Adcionar Habilidades-----------------------*/
+.BtnAddHabilidades{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem; 
+}
+
+/*-----------------------------Efeito Botão Prosegir-----------------------------*/
+.Prosegir{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 3px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem;
+  
+}
+.Prosegir:hover {
+ box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.247);
+}
+.prosseguir{
+    display: flex;
+    
+    justify-content: center;
+}
+.Prosegir > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Prosegir:hover svg {
+  transform: translateX(5px);
+}
+
+.Prosegir:active {
+  transform: scale(0.95);
+}
+/*-----------------------------Efeitos Botão Imprimir-------------------------*/
+.Inprimir{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem;
+}
+/*-----------------------------Efeitos Botão Finalizar-------------------------*/
+.Finalizar{
+   margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem; 
+}
+
+/*-----------------------------Efeito Botão Voltar-----------------------------*/
+.Voltar{
+  margin-top: 2vh;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 3px;
+  border-radius: 100px;
+  background: #ebe9e9;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 1rem;
+  transform: rotate(180deg);
+}
+.Voltar:hover {
+ box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.247);
+}
+.prosseguir{
+    display: flex;
+    
+    justify-content: center;
+}
+.Voltar > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Voltar:hover svg {
+  transform: translateX(5px);
+}
+
+.Voltar:active {
+  transform: scale(0.95);
+}

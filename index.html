@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/style.css">
+    <link rel="stylesheet" href="Estilos/estilosDeBotoes.css">
+    <link rel="stylesheet" href="Estilos/MediaQuery.css">
+    <link rel="shortcut icon" href="Imagens/IconCurriculo.png" type="image/IconCurriculo">
+    <title>Currículo kelCV</title>
+</head>
+<body>
+  <nav class="NavInicial" id="NavInicial">
+    <div class="LOGO-Imagem">
+        <img class="LogoKelCV" src="/Imagens/KelCV-Curriculo-removebg2.png" alt="LogoKelCV">
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+     <ul class="ULInicial">
+       <li class="LiInicial">
+         <a class="LinkInicio" href="/index.html"><p class="Pmenu"  id="Inicio" >Inicio</p></a>
+         <a class="LinkInicio Ajuda" href="/Paginas/Ajuda.html"><p class="Pmenu">Ajuda</p></a>
+         <a class="LinkInicio" href="/Paginas/Contatos.html"><p class="Pmenu Contatos">Contato</p></a>
+         <a class="LinkInicio" href="#VagasEmprego"><p class="Pmenu">Vagas</p></a>
+         <a class="LinkInicio" href="/Paginas/contribuicao.html"><p class="Pmenu">Contribuir</p></a>
+       </li>
+     </ul>
+  </nav>
+    <h1 class="Titulo scroll-animate">Crie Seu Currículo e Mostre Seu Potencial</h1>
+    <p class="Descrição scroll-animate scroll-animate-delay-1">Preencha os campos abaixo para criar seu currículo.</p>
+    <section class="container">
+        <form action=""  autocomplete="on" class="formulario1 scroll-animate scroll-animate-delay-2" id="FormFormulario1">
+            <div class="DivEtapa1" id="DivEtapa1">
+              <h2>Dados Pessoais</h2>
+                <label for="Nome">Nome completo</label>
+                <input type="text"  id="Nome" placeholder="Digite seu nome completo">
+                <label for="Estados">Estados</label>
+                <select  class="Estados" name="estados" id="Estados"> 
+                    <option>Selecione o Estado</option> 
+                    <option value="ac">Acre</option> 
+                    <option value="al">Alagoas</option> 
+                    <option value="am">Amazonas</option> 
+                    <option value="ap">Amapá</option> 
+                    <option value="ba">Bahia</option> 
+                    <option value="ce">Ceará</option> 
+                    <option value="df">Distrito Federal</option> 
+                    <option value="es">Espírito Santo</option> 
+                    <option value="go">Goiás</option> 
+                    <option value="ma">Maranhão</option> 
+                    <option value="mt">Mato Grosso</option> 
+                    <option value="ms">Mato Grosso do Sul</option> 
+                    <option value="mg">Minas Gerais</option> 
+                    <option value="pa">Pará</option> 
+                    <option value="pb">Paraíba</option> 
+                    <option value="pr">Paraná</option> 
+                    <option value="pe">Pernambuco</option> 
+                    <option value="pi">Piauí</option> 
+                    <option value="rj">Rio de Janeiro</option> 
+                    <option value="rn">Rio Grande do Norte</option> 
+                    <option value="ro">Rondônia</option> 
+                    <option value="rs">Rio Grande do Sul</option> 
+                    <option value="rr">Roraima</option> 
+                    <option value="sc">Santa Catarina</option> 
+                    <option value="se">Sergipe</option> 
+                    <option value="sp">São Paulo</option> 
+                    <option value="to">Tocantins</option> 
+                </select>
+
+
+                <label for="Cidade">Cidade</label>
+                <input type="" name="cidade" id="Cidade" placeholder="Uibaí/Ba">
+
+                <label for="Email">Email</label>
+                <input type="email"  id="Email" placeholder="exemplo@email.com">
+
+                <label for="DDD">DDD</label>
+                <input type="text" name="contato" id="DDD" placeholder="00">
+
+                <label for="whatsapp">Whatsapp</label>
+                <input type="text"  id="whatsapp" placeholder="00000-0000">
+
+                <h5 class="LabelRedeSocial">Selecione sua rede social</h5>
+                <div class="rede-social">
+                    <button type="button" onclick="mostrarInput()" class="BtnInput">
+                        <input type="radio" name="rede-social" id="RadioGithub" placeholder="Github">
+                        <label for="RadioGithub" class="LabelGithub">Github</label>
+                    </button>
+
+                    <button type="button" onclick="mostrarInput()" class="BtnInput">
+                        <input type="radio" name="rede-social" id="RadioLinkedIn" placeholder="LinkedIn">
+                        <label for="RadioLinkedIn" class="LabelLinkedIn">LinkedIn</label>
+                    </button>
+
+                    <button type="button" onclick="mostrarInput()" class="BtnInput">
+                        <input type="radio" name="rede-social" id="Todas" placeholder="Todos">
+                        <label for="Todas" class="LabelTodas">Todas</label>
+                    </button>
+                </div>
+                <div class="DivSocial">
+                  <h4 class="A4Social">Digite sua rede social</h4>
+                  <input type="text" class="InputGithub"  id="InputGithub" placeholder="Github">
+                  <input type="text" class="InputLinkedIn"  id="InputLinkedIn" placeholder="LinkedIn">
+                </div>
+            </div>
+            <button type="submit" class="Prosegir Btn-submit1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 74 74"
+                height="30"
+                width="30"
+              >
+                <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                <path
+                  fill="black"
+                  d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                  38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                   25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                    45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                    47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                ></path>
+              </svg>
+            </button>
+<!-------------------------------------------Segunda Etapa--------------------------------->
+            <div class="DivEtapa2" id="DivEtapa2">
+                <h2>Objetivos</h2>
+                <textarea  id="Objetivos" cols="48" rows="15" placeholder=" Descreva seu objetivo profissional" autofocus></textarea>
+                
+                
+                <div class="DivEnsinoMédio">
+                   <h2>Ensino Médio</h2>
+                  <button type="button" onclick="DivEnsinoMédio()" class="BtnIncompleto">
+                   <input type="radio" name="EsinoMédio" class="InptRadioEsinoMédio1"  id="incompleto" autofocus> 
+                   <label for="incompleto">Incompleto</label>
+                  </button>
+
+                  <button type="button" onclick="DivEnsinoMédio()" class="BtnCompleto">
+                   <input type="radio" name="EsinoMédio" class="InptRadioEsinoMédio2"  id="completo">
+                   <label for="completo">Completo</label>
+                  </button>
+
+                   <div class="DivIformaçãoEscola" id="DivIformaçãoEscola">
+                    <label for="Colegio" class="labelColoegio">Nome Do Colegio</label>
+                    <input type="text" class="Colegio" id="Colegio" placeholder="Digite o nome do colegio de formação">
+                    <label for="DataDeFormação" class="labelColoegio">Ano De Formação</label>
+                    <input type="text" class="DataDeFormação" id="DataDeFormação" placeholder="Digite a data de formação">
+                   </div>
+                </div>
+
+                <h2>Formação</h2>     
+                <form  autocomplete="on" class="formCurso1" id="FormFormacao1">
+
+                  <label for="Curso">Curso</label>
+                  <input type="text" class="Curso" id="Curso" placeholder="Digite o nome do curso">
+
+                  <label for="NomeInstituicao">Nome da instituição</label>
+                  <input type="text" class="NomeInstituicao" id="NomeInstituicao" placeholder="Digite o nome da instituição">
+                  
+                  <label for="AnoConclusao">Ano de Conclusão</label>
+                  <input type="text" class="AnoConclusao" id="AnoConclusao" placeholder="0000-0000">
+          
+                  
+                  <button type="button" class="BtnADDCurso BtnAdicionar" id="BtnAdicionar">Adcionar Curso</button>
+                
+                </form>
+                <div class="DivBtnEtapa2">
+                
+                <button type="button" class="Voltar Btn-Voltar" onclick="voltarDiv1()">
+                  <a href="#NavInicial">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 74 74"
+                      height="30"
+                      width="30"
+                    >
+                      <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                      <path
+                        fill="black"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                        38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                        25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                          45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                          47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                      ></path>
+                    </svg>
+                  </a>
+                </button> 
+                <button type="submit" class=" Prosegir Btn-submit2">
+              
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 74 74"
+                      height="30"
+                      width="30"
+                    >
+                      <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                      <path
+                        fill="black"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                        38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                        25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                          45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                          47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                      ></path>
+                    </svg>
+               
+                </button>
+               
+                </div>
+            </div>
+        </form>
+<!-------------------------------------------Terceira Etapa--------------------------------->              
+        <form action=""  autocomplete="on" class="formulario2 scroll-animate scroll-animate-delay-3" id="FormFormulario2">  
+          
+                <h2 class="ExperiênciaH2">Experiência Profissional</h2>
+               
+                  <label for="Cargo">Cargo</label>
+                  <input type="text" class="Cargo" id="Cargo" placeholder="Digite o nome do cargo">
+
+                  <label for="NomeEmpresa">Nome da empresa</label>
+                  <input type="text" class="NomeEmpresa" id="NomeEmpresa" placeholder="Digite o nome da empresa">
+                  
+                  <label for="Periodo">Ano de Entrada e Saída</label>
+                  <input type="text" class="AnoEntradaSaida" id="Periodo" placeholder="0000-0000">
+                  <label for="DescricaoAtividades">Descrição das atividades</label>
+                  <textarea class="DescricaoAtividades" name="DescricaoAtividades" id="DescricaoAtividades" cols="48" rows="10" placeholder="Descreva suas atividades e responsabilidades no cargo"></textarea>
+                  <button type="button" class=" BtnAddExperiencia BtnAdicionarExp" id="btnAdicionarExp">Adcionar Experiência</button>
+
+                  <h2 class="HabilidadesTécnicasH2">Habilidades Técnicas</h2>
+                  <label for="Habilidades">Habilidades</label>
+                  <input type="text" class="Habilidades" id="Habilidades" placeholder="Digite suas habilidades técnicas">
+
+
+                <h4 class="HabilitaçãoH5">Habilitação</h4>
+                  <div class="Habilitação">
+                    <button type="button" onclick="mostrarInputOutros()" class="BtnInputA">
+                        <input type="radio" name="rede-social" class="InputHabilitação" id="A">
+                        <label for="A">Categoria A</label>
+                    </button>
+
+                    <button type="button" onclick="mostrarInputOutros()" class="BtnInputB">
+                        <input type="radio" name="rede-social" class="InputHabilitação" id="B">
+                        <label for="B">Categoria B</label>
+                    </button>
+
+                    <button type="button" onclick="mostrarInputOutros()" class="BtnInputAB">
+                        <input type="radio" name="rede-social" class="InputHabilitação" id="A/B">
+                        <label for="A/B">Categoria A/B</label>
+                    </button>
+
+                    <button type="button" onclick="mostrarInputOutros()" class="BtnInputOutras">
+                        <input type="radio" name="rede-social" class="InputHabilitação" id="Outros">
+                        <label for="Outros">Outros</label>
+                    </button>
+                  
+                    <input type="text" name="Habilitação" class="InputOutras" id="InputOutras" placeholder="Digite outras habilitações que queira destacar no currículo">
+                </div>
+                  
+                <label for="InformaçõesAdicionais">Informações Adicionais </label>
+                <input type="text" class="InformaçõesAdicionais" id="InformaçõesAdicionais" placeholder="Digite informações adicionais que queira destacar no currículo">
+
+                <button type="button" class=" BtnAddHabilidades BtnAdicionarHabili" id="btnAdicionarHabili">Adcionar Habilidades</button>
+                <div class="DivBtnEtapa2">
+                  <button type="button" class="Voltar Btn-Voltar" onclick="voltarDiv2()">
+                    <a href="#NavInicial"> 
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 74 74"
+                        height="30"
+                        width="30"
+                      >
+                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                        <path
+                          fill="black"
+                          d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                          38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                          25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                            45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                            47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                        ></path>
+                      </svg>
+                    </a>   
+                  </button>
+                  <button type="submit" class=" Prosegir Btn-submit3">
+                    
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 74 74"
+                        height="30"
+                        width="30"
+                      >
+                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                        <path
+                          fill="black"
+                          d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                          38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                          25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                            45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                            47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                        ></path>
+                      </svg>
+                  </button>
+                </div>
+                  
+        </form> 
+
+<!---------------------------Mostrar as informaçoes da pessoa no curriculo--------------------->        
+        <section class="section1 scroll-animate scroll-animate-delay-4">
+            <h2 class="Nome-Cv" id="NomeCv"></h2>
+            <p class="Cidade-Cv" id="CidadeCv"></p>
+            <p class="email-Cv" id="EmailCv"></p>
+            <p class="DDD-Cv" id="DDDCv"></p>
+            <p class="Whatsapp-Cv" id="WhatsappCv"></p>
+            <p class="Github-Cv" id="GithubCv"></p>
+            <p class="LinkedIn-Cv" id="LinkedInCv"></p>
+<hr>
+            <h2 class="Objetivo-Cv" id="H2ObjetivoCv">Objetivos</h2>
+            <p class="Objetivo-Cv" id="ObjetivoCv"></p>
+             
+            
+            <h2 class="Formacao-Cv" id="H2FormacaoCv">Formação</h2>
+            <p class="EnsinoMedioCv" id="EnsinoMedioCv"></p>
+            <p class="lista" id="ListaFormacao"></p>
+            
+            <h2 class="ExperienciaCv" id="H2ExperienciaCv">Experiência Profissional</h2>
+            <p class="ListaCargo-Cv" id="ListaCargoCv"></p>
+            <p class="DescriçãoCV" id="DescriçãoCv"></p>
+            <p class="HabilidadesCv" id="HabilidadesCv"></p>
+            <p class="HabilitaçãoCv" id="HabilitaçãoCv"></p>
+            <p class="InformaçõesAdicionaisCv" id="InformaçõesAdicionaisCv"></p>
+            
+          <button type="submit" class="Inprimir BtnImprimir">Imprimir Currículo</button>
+              
+          <div class="DivBtnPrint">
+            <button type="button" class="Voltar BtnPrintVoltar" onclick="voltarDiv3()">
+               <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 74 74"
+                      height="30"
+                      width="30"
+                    >
+                      <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                      <path
+                        fill="black"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 
+                        38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792
+                        25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934
+                          45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 
+                          47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                      ></path>
+                    </svg>
+            </button>
+            <button type="button" class="Finalizar BtnFinalizar" onclick="finalizarCv()">Finalizar</button>
+          </div>
+        </section>
+        </section>
+
+    <!----------------------------------- Seção de Vagas de Emprego ------------------------------------>
+    <section class="section-vagas scroll-animate" id="VagasEmprego">
+      <h2 class="TituloVagas">Vagas de Emprego</h2>
+      <p class="DescricaoVagas">Encontre oportunidades de trabalho nas melhores empresas</p>
+      <div class="carousel-wrapper">
+        <button class="carrossel-btn carrossel-btn-prev" aria-label="Vaga anterior">&#10094;</button>
+        <div class="destaques-container carousel-track">
+           <div class="destaque-card">
+             <a href="https://www.instagram.com/bahiaagrovagas?igsh=MWFmNmluZWg0cTBlZA%3D%3D" target="_blank" class="destaque-link">
+               <img src="Imagens/AgroVagas.jpg" alt="Bahia Agrovagas" class="destaque-imagem">
+               <div class="destaque-content">
+                 <h3 class="destaque-titulo">Bahia Agrovagas</h3>
+                 <p class="destaque-descricao">Econtre sua vaga de emprego.</p>
+                 <span class="btn-acessar">Acessar</span>
+               </div>
+             </a>
+           </div>
+
+           <div class="destaque-card">
+             <a href="" target="_blank" class="destaque-link">
+               <img src="Imagens/Emprega Irece.jpg" alt="Emprega Irece" class="destaque-imagem">
+               <div class="destaque-content">
+                 <h3 class="destaque-titulo">Emprega Irece</h3>
+                 <p class="destaque-descricao">Econtre sua vaga de emprego.</p>
+                 <span class="btn-acessar">Acessar</span>
+               </div>
+             </a>
+           </div>
+
+          <div class="destaque-card">
+             <a href="https://www.instagram.com/empregosnabahia/?hl=pt" target="_blank" class="destaque-link">
+               <img src="/Imagens/Epregos na bahi.jpg" alt="Outra Vaga" class="destaque-imagem">
+               <div class="destaque-content">
+                 <h3 class="destaque-titulo">Empregos Bahia</h3>
+                 <p class="destaque-descricao">Econtre sua vaga de emprego.</p>
+                 <span class="btn-acessar">Acessar</span>
+               </div>
+             </a>
+           </div>
+
+           <div class="destaque-card">
+             <a href="https://vagas.solides.com.br/vagas?page=1" target="_blank" class="destaque-link">
+               <img src="/Imagens/logo-solides-vagas.png" alt="Bahia Agrovagas" class="destaque-imagem">
+               <div class="destaque-content">
+                 <h3 class="destaque-titulo">Solides Vagas</h3>
+                 <p class="destaque-descricao">Econtre sua vaga de emprego.</p>
+                 <span class="btn-acessar">Acessar</span>
+               </div>
+             </a>
+           </div>
+
+           <div class="destaque-card">
+             <a href="https://br.indeed.com/jobs?q=vagas+de+emprego&gclsrc=aw.ds&gad_source=1&gad_campaignid=23631987730&gbraid=0AAAAADf0oybfCEet9C9g9QUpMM0hiYGqG&gclid=CjwKCAjwqazPBhALEiwAOuXqdKUE1lhpvFUf9JHDc4Qh1ZU_bXjP2tq6lfiZHIS95esk8BxFihvsuBoCsxEQAvD_BwE&vjk=82d9864fd6378398" target="_blank" class="destaque-link">
+               <img src="/Imagens/indeed.png" alt="Emprega Irece" class="destaque-imagem">
+               <div class="destaque-content">
+                 <h3 class="destaque-titulo">Indeed</h3>
+                 <p class="destaque-descricao">Econtre sua vaga de emprego.</p>
+                 <span class="btn-acessar">Acessar</span>
+               </div>
+             </a>
+           </div>
+        </div>
+        <button class="carrossel-btn carrossel-btn-next" aria-label="Próxima vaga">&#10095;</button>
+      </div>
+      <div class="carrossel-dots"></div>
+    </section>
+
+    <footer class="scroll-animate scroll-animate-delay-5">
+  <div class="Div1">
+
+<!-- Logo e descrição -->
+<div class="Div2">
+  <h2 class="KelCv">KelCV</h2>
+  <p class="ParagrafoFooter">
+    Crie currículos profissionais em minutos e aumente suas chances no mercado de trabalho.
+  </p>
+</div>
+
+<!-- Links rápidos -->
+<div class="LinkFooter">
+  <h3 class="H3Link">Links</h3>
+  <ul class="Ulfooter">
+    <li><a href="index.html" class="Linka">Criar currículo</a></li>
+    <li><a href="#" class="Linka">Preços</a></li>
+    <li><a href="Contatos.html" class="Linka">Contato</a></li>
+    <li><a href="cadastro-links.html" class="Linka">Vagas de Emprego</a></li>
+    <li><a href="contribuicao.html" class="Linka">Contribuir</a></li>
+  </ul>
+</div>
+
+<!-- Suporte -->
+<div class="DivSuporte">
+  <h3 class="H3Suporte">Suporte</h3>
+  <ul class="UlSuporte">
+    <li><a href="Ajuda.html" class="LinkSuporte">Ajuda</a></li>
+    <li><a href="#" class="LinkSuporte">Termos de uso</a></li>
+    <li><a href="#" class="LinkSuporte">Privacidade</a></li>
+  </ul>
+</div>
+
+<!-- Redes sociais -->
+<div class="DivSociais">
+  <h3 class="H3Sociais">Siga-nos</h3>
+  <p class="PSociais">LinkedIn • <a class="Link-InstagramFooter" href="https://www.instagram.com/cleriston.ferreira10/">Instagram </a>• Twitter</p>
+</div>
+
+  </div>
+
+  <!-- Linha inferior -->
+
+  <div class="DivFooter2">
+    <p class="DivFooterP@" id="DivFooterP@">© {AnoAtual()} Kel Designer. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</body>
+<script src="JavaScript/script.js"></script>
+<script src="JavaScript/MudarDeForm.js"></script>
+<script src="JavaScript/DadosNaTela.js"></script>
+</html>

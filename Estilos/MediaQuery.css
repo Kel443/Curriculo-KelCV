@@ -1,0 +1,460 @@
+
+/* ---------------------------------------------------
+   MEDIA QUERIES PARA RESPONSIVIDADE
+ ------------------------------------------------------ */
+
+/* Telas médias (Tablets em paisagem e Laptops pequenos) */
+@media screen and (max-width: 1024px) {
+    .formulario1, .formulario2, .formulario3 {
+        width: 40vw;
+    }
+    .section1 {
+        width: 50vw;
+    }
+}
+
+/* Telas pequenas (Tablets em retrato e celulares grandes) */
+@media screen and (max-width: 820px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+    }
+    
+    .formulario1, .formulario2, .formulario3 {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+    
+    .section1 {
+        width: 100%;
+        max-width: 600px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    .Titulo {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+    
+    .Descrição {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .Div1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .Div2, .LinkFooter, .DivSuporte, .DivSociais {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------
+    RESPONSIVIDADE DA NAVEGAÇÃO
+  ------------------------------------------------------ */
+
+/* Menu toggle (hamburger) - oculto por padrão */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #080808;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Desktop - comportamento padrão */
+@media screen and (min-width: 821px) {
+  .NavInicial {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .ULInicial {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Telas médias (Tablets) */
+@media screen and (max-width: 1024px) {
+  .NavInicial {
+    width: 100%;
+  }
+}
+
+/* Telas pequenas (Tablets em retrato e celulares grandes) */
+@media screen and (max-width: 820px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: -3px;
+  }
+  
+  .NavInicial {
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  .ULInicial {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  
+  .ULInicial.active {
+    right: 0;
+  }
+  
+  .LiInicial {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .LinkInicio {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .Pmenu {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+}
+/* Telas extrassmalls (Smartphones pequenos) */
+@media screen and (max-width: 480px) {
+    .formulario1, .formulario2, .formulario3, .section1 {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .Titulo {
+        font-size: 1.5rem;
+    }
+    
+    .Descrição {
+        font-size: 1rem;
+    }
+    
+    .rede-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    #RadioLinkedIn, #RadioGithub, #Todas {
+        margin-left: 25vw;
+    }
+    
+    .HabilitaçãoH5{
+      margin-bottom: -2.5vh;
+    }
+    .Habilitação {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .BtnInput {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+/* Responsividade do Carrossel de Vagas */
+@media screen and (max-width: 820px) {
+    .section-vagas {
+        padding: 3vh 2vh;
+        margin: 3vh 1vw;
+        width: 95vw;
+    }
+
+    .TituloVagas {
+        font-size: 1.8rem;
+    }
+
+    .DescricaoVagas {
+        font-size: 1rem;
+    }
+
+    .carrossel-container {
+        max-height: 450px;
+    }
+
+    .carrosel-imagem {
+        height: 300px;
+    }
+
+    .carrossel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .btn-acessar {
+        padding: 1.2vh 3vh;
+        font-size: 1rem;
+    }
+}
+
+  /* Responsividade da Seção de Destaques (Carrossel) */
+  @media screen and (max-width: 820px) {
+    .LOGO-Imagem{
+      width: 25%;
+      display: flex;
+      margin-top: -6vh;
+      margin-left: 1vw;
+}
+    .LogoKelCV{
+        width: 100%;
+        display: flex;
+        margin-top: 5vh;
+        justify-content: flex-end; 
+    }
+    .section-vagas {
+      padding: 3vh 2vh;
+      margin: 3vh 1vw;
+      width: 95vw;
+    }
+
+    .TituloVagas {
+      font-size: 1.8rem;
+    }
+
+    .DescricaoVagas {
+      font-size: 1rem;
+    }
+
+    .carrossel-container {
+      max-height: 450px;
+    }
+
+    .carrosel-imagem {
+      height: 300px;
+    }
+
+    .carrossel-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+
+    .btn-acessar {
+      padding: 1.2vh 3vh;
+      font-size: 1rem;
+    }
+
+    /* Ajuste do carrossel para mobile - um card por vez */
+    .destaques-container {
+      gap: 0;
+      padding: 1vh 0;
+    }
+
+    .destaque-card {
+      width: 85vw;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .destaque-imagem {
+      height: 220px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .LOGO-Imagem{
+      width: 30%;
+      display: flex;
+      margin-top: -6vh;
+      margin-left: -5vw;
+}
+    .LogoKelCV{
+        width: 100%;
+        display: flex;
+        margin-top: 5vh;
+        justify-content: flex-end; 
+    }
+    .section-vagas {
+      padding: 2vh 1vh;
+      margin: 2vh 0;
+      width: 98vw;
+      border-radius: 1.5vh;
+    }
+
+    .TituloVagas {
+      font-size: 1.5rem;
+    }
+
+    .DescricaoVagas {
+      font-size: 0.9rem;
+    }
+
+    .carrossel-container {
+      border-radius: 1.5vh;
+      overflow: hidden;
+    }
+
+    /* Mobile: ajuste perfeito do carrossel - um card por vez */
+    .destaques-container {
+      gap: 0;
+      padding: 0.5vh 0;
+    }
+
+    .destaque-card {
+      width: 90vw;
+      max-width: none;
+      margin: 0 auto;
+      border-radius: 1.5vh;
+    }
+
+    .destaque-imagem {
+      height: 180px;
+      max-width: 100%;
+    }
+
+    .destaque-content {
+      padding: 1.5vh;
+    }
+
+    .destaque-titulo {
+      font-size: 1.2rem;
+    }
+
+    .destaque-descricao {
+      font-size: 0.85rem;
+    }
+
+    .btn-acessar {
+      padding: 1vh 2vh;
+      font-size: 0.9rem;
+    }
+
+    .carrossel-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 1.3rem;
+    }
+
+    .carrossel-btn-prev {
+      left: 0.5vw;
+    }
+
+    .carrossel-btn-next {
+      right: 0.5vw;
+    }
+
+    .carrossel-dots {
+      gap: 0.8vw;
+    }
+
+    .carrossel-dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+/*----------------------------Seção vagas----------*/
+@media screen and (max-width: 480px) {
+    .section-vagas {
+        padding: 2vh 1vh;
+        margin: 2vh 0;
+        width: 98vw;
+        border-radius: 1.5vh;
+    }
+
+    .TituloVagas {
+        font-size: 1.5rem;
+    }
+
+    .carrossel-container {
+        border-radius: 1.5vh;
+    }
+
+    .carrosel-slide {
+        padding: 1vh;
+    }
+
+    .carrosel-imagem {
+        height: 250px;
+        max-width: 100%;
+    }
+
+    .btn-acessar {
+        padding: 1vh 2vh;
+        font-size: 0.9rem;
+    }
+
+    .carrossel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .carrossel-btn-prev {
+        left: 0.5vw;
+    }
+
+    .carrossel-btn-next {
+        right: 0.5vw;
+    }
+
+    .carrossel-dots {
+        gap: 0.8vw;
+    }
+
+    .carrossel-dot {
+        width: 10px;
+        height: 10px;
+    }
+  }

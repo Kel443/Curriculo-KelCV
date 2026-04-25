@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/style.css">
+    <link rel="stylesheet" href="/Estilos/MediaQuery.css">
+    <link rel="shortcut icon" href="Imagens/IconCurriculo.png" type="image/IconCurriculo">
+    <title>Contatos - KelCV</title>
+    <style>
+        .container-contatos {
+            max-width: 800px;
+            margin: 2px auto 50px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .contato-item {
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contato-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .contato-item h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .contato-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .contato-item a:hover {
+            color: #2980b9;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .whatsapp-btn:hover {
+            background: #20BD5A;
+            transform: scale(1.05);
+        }
+        .instagram-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .instagram-btn:hover {
+            transform: scale(1.05);
+        }
+        .btn-voltar {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        .btn-voltar:hover {
+            background: #34495e;
+        }
+        .icon-contato {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-contatos">
+        <a href="/index.html" class="btn-voltar" id="btn-voltar">Voltar a pagina principal</a>
+        
+        <h1>Fale Conosco</h1>
+        <p>Estamos prontos para ajudar você a criar o currículo perfeito!</p>
+        
+        <div class="contato-item">
+            <div class="icon-contato"></div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/5574988232244?text=Ol%C3%A1%20Kel%2C%20vim%20atrav%C3%A9s%20da%20pagina%20KelCV." class="whatsapp-btn" target="_blank">
+                (74) 98823-2244
+            </a>
+            <p style="margin-top: 10px; color: #666;">Clique para conversar conosco no WhatsApp</p>
+        </div>
+        
+        <div class="contato-item">
+            <div class="icon-contato"></div>
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/cleriston.ferreira10/" class="instagram-btn" target="_blank">
+                @KelCV
+            </a>
+            <p style="margin-top: 10px; color: #666;">Siga-nos no Instagram para novidades e dicas</p>
+        </div>
+        
+        <div class="contato-item">
+            <div class="icon-contato">📧</div>
+            <h3>Email</h3>
+            <a href="mailto:contato@kelcv.com" style="color: #3498db; text-decoration: none; font-size: 1.1em;">
+                contato@kelcv.com
+            </a>
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">
+            Horário de atendimento: Segunda a Sexta, das 8h às 18h
+        </p>
+    </div>
+    <a href="#btn-voltar" class="btn-voltar">Voltar para o inicio da pagina</a>
+    <a href="/index.html" class="btn-voltar">Voltar para pagina principal</a>
+    <footer>
+        <div class="Div1">
+            <div class="Div2">
+                <h2 class="KelCv">KelCV</h2>
+                <p class="ParagrafoFooter">
+                    Crie currículos profissionais em minutos e aumente suas chances no mercado de trabalho.
+                </p>
+            </div>
+            <div class="LinkFooter">
+                <h3 class="H3Link">Links</h3>
+                <ul class="Ulfooter">
+                    <li><a href="/index.html" class="Linka">Criar currículo</a></li>
+                    <li><a href="#" class="Linka">Modelos</a></li>
+                    <li><a href="/Paginas/contribuicao.html" class="Linka">Preços</a></li>
+                    <li><a href="/Paginas/Contatos.html" class="Linka">Contato</a></li>
+                </ul>
+            </div>
+            <div class="DivSuporte">
+                <h3 class="H3Suporte">Suporte</h3>
+                <ul class="UlSuporte">
+                    <li><a href="/Paginas/Ajuda.html" class="LinkSuporte">Ajuda</a></li>
+                    <li><a href="#" class="LinkSuporte">Termos de uso</a></li>
+                    <li><a href="#" class="LinkSuporte">Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="DivSociais">
+                <h3 class="H3Sociais">Siga-nos</h3>
+                <p class="PSociais">LinkedIn • Instagram • Twitter</p>
+            </div>
+        </div>
+        <div class="DivFooter2">
+            <p class="DivFooterP@" id="DivFooterP@"></p>
+        </div>
+    </footer>
+</body>
+<script>
+    let DivFooterP = document.getElementById('DivFooterP@');  
+    let data = new Date();
+    let anoAtual = data.getFullYear();
+    DivFooterP.innerHTML = `© ${anoAtual} Kel Designer. Todos os direitos reservados.`;
+</script>
+</html>
