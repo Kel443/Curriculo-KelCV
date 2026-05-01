@@ -671,7 +671,7 @@ footer {
         padding: 0;
     }
     
-    .formulario1, .formulario2, .formulario3, 
+    .formulario1, .formulario2, .formulario3,  
     .Titulo, .Descrição, footer, 
     .BtnImprimir, .DivBtnPrint {
         display: none !important;
@@ -690,7 +690,7 @@ footer {
     .section1, .section1 * {
         color: black !important;
     }
-    .section-vagas{
+    .section-vagas, .container-contribuicao{
         display: none;
     }
 }
