@@ -17,6 +17,8 @@
     --cinza: #d3d3d3;
     --Bege-claro: #F4F1EE;
     --Azul-petróleo: #0F4C5C;
+    --Botoes:#2c3e50;
+    --Botoes-hover:#34495e;
     --White-Smoke-Fumaça-Branca: #f5f5f5;
 }
 
@@ -78,6 +80,7 @@ body {
     list-style: none;
 }
 .LinkInicio{
+    height: 3.5vh;
     color: #080808;
     text-decoration: none;
 }
@@ -93,7 +96,7 @@ body {
 
 .container {
     display: flex;
-    margin-top: 1vh;
+    margin-top: 1.5vh;
     border-radius: 2vh;
     margin-bottom: 2vh;
 }
@@ -107,6 +110,7 @@ body {
     font-family: var(--font-Secundaria);
     font-weight: 500;
     color:black;
+    margin-top: -10vh;
 }
 
 .Descrição {
@@ -162,7 +166,7 @@ input:focus {
     border-radius: 2vh;
     flex-direction: column;
     font-size: 13pt;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.795), rgba(255, 255, 255, 0.801)), url(Imagens/IconFundo.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.795), rgba(255, 255, 255, 0.801)), url(/Imagens/IconFundo.jpg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

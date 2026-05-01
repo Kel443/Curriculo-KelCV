@@ -1,0 +1,121 @@
+body{
+    background: #f7f7f7;
+}
+.container-contribuicao {
+    max-width: 950px;
+    margin: 5vh auto;
+    padding: 4vh;
+    background: #f7f7f7;
+    border-radius: 2vh;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.titulo-contribuicao {
+    font-family: var(--font-Secundaria);
+    color: var(--Azul-petróleo);
+    margin-bottom: 2vh;
+    font-size: 2.2rem;
+}
+
+.texto-contribuicao {
+    color: var(--Cinza-Cinza);
+    font-size: 1.1rem;
+    margin-bottom: 4vh;
+    line-height: 1.6;
+}
+
+.qr-container {
+    background: white;
+    padding: 2vh;
+    border-radius: 1.5vh;
+    border: 2px solid #e9ecef;
+    margin-bottom: 3vh;
+    display: inline-block;
+}
+
+.qr-imagem {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 1vh;
+    margin-bottom: 2vh;
+}
+
+.pix-copia-ecola-container {
+    margin-bottom: 2vh;
+}
+
+.label-pix {
+    display: block;
+    margin-bottom: 1vh;
+    font-weight: 600;
+    color: var(--Azul-petróleo);
+}
+
+.pix-input {
+    width: 100%;
+    padding: 1.5vh;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background: #f8f9fa;
+    color: #333;
+    word-break: break-all;
+    margin-bottom: 1.5vh;
+    font-family: monospace;
+}
+
+.btn-copiar {
+    background: rgb(5, 1, 66);
+    color: white;
+    border: none;
+    padding: 1.2vh 3vh;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin: 0.5vh;
+}
+
+.btn-copiar:hover {
+    background: #0a3c4a;
+    transform: translateY(-2px);
+}
+
+.btn-copiar.copiado {
+    background: #28a745;
+}
+
+.sem-pix {
+    color: #dc3545;
+    font-weight: 500;
+    padding: 2vh;
+    background: #f8d7da;
+    border-radius: 1vh;
+    border: 1px solid #f5c6cb;
+}
+
+.instrucoes {
+    background: #e7f3ff;
+    padding: 2vh;
+    border-radius: 1vh;
+    margin-top: 3vh;
+    text-align: left;
+    border-left: 4px solid var(--Azul-petróleo);
+}
+
+.instrucoes h3 {
+    color: var(--Azul-petróleo);
+    margin-bottom: 1vh;
+}
+
+.instrucoes ol {
+    margin-left: 2vh;
+}
+
+.instrucoes li {
+    margin-bottom: 0.5vh;
+    color: var(--Cinza-Cinza);
+}
