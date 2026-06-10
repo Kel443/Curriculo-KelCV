@@ -273,7 +273,7 @@ textarea {
 }
 
 .Objetivo-Cv {
-    margin-top: 2vh;
+    margin-top: 1vh;
     display: none;
     margin-bottom: -1.5vh;
 }
@@ -284,7 +284,7 @@ textarea {
 }
 
 .Formacao-Cv {
-    margin-top: 3vh;
+    margin-top: 1vh;
     display: none;
 }
 .DivNomeEscola{
@@ -351,6 +351,20 @@ textarea {
     background-color: white;
     box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
 }
+.H2Habilidades{
+    display: none;
+    margin-top: 1vh;
+}
+.LabelHabilidades{
+    margin-top: 3vh;
+    font-size: 1.2rem;
+    font-weight: 650;
+}
+.HabilitaçãoH4{
+    margin-top: 3vh;
+    margin-bottom: 1.5vh;
+    font-size: 1.2rem;
+}
 .Habilitação{
     margin-top: -2vh;   
 }
@@ -360,14 +374,24 @@ textarea {
 .LabelHabilitaçã{
     cursor: pointer;
 }
-.InputOutras{
+.DivInputOutros{
     display: none;
+}
+.InputOutras{
+    display: block;
     margin-top: 1vh;
     padding: 1vh;
     border: none;
     border-radius: 5px;
     width: -webkit-fill-available;
     border: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+.informacoes-adicionais{
+    display: none;
+    margin-top: 3vh;
+    font-size: 1.2rem;
+    font-weight: 650;
 }
 
 .DivBtnPrint {
@@ -651,19 +675,27 @@ footer {
 -----------------------------------------------------*/
 @media print {
     @page {
-        size: A4 portrait;
-        margin: 1.5cm;
+        size: A4;
+        margin-top: 1cm;
+        margin-right: 1cm;
+        margin-bottom: 1cm;
+        margin-left: 1cm; /* Superior, Direita, Inferior, Esquerda */
         font-family: Arial, Helvetica, sans-serif;
     }
     
     body {
-        background: white;
         margin: 0;
         padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff
     }
     .NavInicial{
         display: none;
     }
+    
     
     .container {
         display: block;
@@ -685,12 +717,60 @@ footer {
         box-shadow: none !important;
         margin: 0 !important;
         padding: 0 !important;
+        
     }
     
     .section1, .section1 * {
         color: black !important;
     }
+   
     .section-vagas, .container-contribuicao{
         display: none;
+    }
+    .LinhaHorizontal{
+        display: block;
+        color: black;
+        border: 1px solid black;
+        margin-top: 1vh;
+    }
+    .Formacao-Cv{
+        display: block;
+        margin-top: 1.5vh;
+        margin-bottom: 1vh;
+    }
+    .EnsinoMedioCv{
+        display: block;
+        margin-top: -1vh;
+        margin-bottom: 1vh;
+    }
+    .lista{
+        display: block;
+        margin-top: -1vh;
+        margin-bottom: 1vh;
+    }
+    .ExperienciaCv{
+        display: block;
+        margin-top: -1vh;
+    }
+    .ListaCargo-Cv{
+        display: block;
+        margin-top: -1vh;
+    }
+    .H2Habilidades{
+        display: block;
+        margin-top: 1vh;
+    }
+    .HabilidadesCv{
+        display: block;
+        margin-top: -0.5vh;
+    }
+    .informacoes-adicionais{
+        display: block;
+        margin-top: -0.5vh;
+        font-size: 1.2rem;
+        font-weight: 650;
+    }
+    .InformaçõesAdicionaisCv{
+        margin-top: -0.5vh;
     }
 }

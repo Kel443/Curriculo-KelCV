@@ -233,11 +233,12 @@
                   <button type="button" class=" BtnAddExperiencia BtnAdicionarExp" id="btnAdicionarExp">Adcionar Experiência</button>
 
                   <h2 class="HabilidadesTécnicasH2">Habilidades Técnicas</h2>
-                  <label for="Habilidades">Habilidades</label>
+                  <label class="LabelHabilidades" for="Habilidades">Habilidades</label>
                   <input type="text" class="Habilidades" id="Habilidades" placeholder="Digite suas habilidades técnicas">
+                  <button type="button" class=" BtnAddHabilidades BtnAdicionarHabili" id="btnHabilidades">Adicionar Habilidades Técnicas </button> 
 
 
-                <h4 class="HabilitaçãoH5">Habilitação</h4>
+                <h4 class="HabilitaçãoH4">Habilitação</h4>
                   <div class="Habilitação">
                     <button type="button" onclick="mostrarInputOutros()" class="BtnInputA">
                         <input type="radio" name="rede-social" class="InputHabilitação" id="A">
@@ -258,14 +259,17 @@
                         <input type="radio" name="rede-social" class="InputHabilitação" id="Outros">
                         <label for="Outros">Outros</label>
                     </button>
-                  
-                    <input type="text" name="Habilitação" class="InputOutras" id="InputOutras" placeholder="Digite outras habilitações que queira destacar no currículo">
+                  <div class="DivInputOutros" id="DivInputOutros">
+                    <label for="InputOutros" class="LabelHabilitaçã">Digite outras habilitações</label>
+                    <input type="text" name="Habilitação" class="InputOutras" id="InputOutros" placeholder="Digite outras habilitações que queira destacar no currículo">
+                  </div>
                 </div>
+                <button type="button" class=" BtnAddHabilidades BtnAdicionarHabili" id="btnAdicionarHabilitação">Adcionar Habilitação</button>
                   
                 <label for="InformaçõesAdicionais">Informações Adicionais </label>
                 <input type="text" class="InformaçõesAdicionais" id="InformaçõesAdicionais" placeholder="Digite informações adicionais que queira destacar no currículo">
-
-                <button type="button" class=" BtnAddHabilidades BtnAdicionarHabili" id="btnAdicionarHabili">Adcionar Habilidades</button>
+                <button type="button" class=" BtnAddHabilidades BtnAdicionarHabili" id="btnAdicionarInfoAdicional">Adcionar Informações Adicionais</button>
+            
                 <div class="DivBtnEtapa2">
                   <button type="button" class="Voltar Btn-Voltar" onclick="voltarDiv2()">
                     <a href="#NavInicial"> 
@@ -321,7 +325,7 @@
             <p class="Whatsapp-Cv" id="WhatsappCv"></p>
             <p class="Github-Cv" id="GithubCv"></p>
             <p class="LinkedIn-Cv" id="LinkedInCv"></p>
-<hr>
+<hr class="LinhaHorizontal">
             <h2 class="Objetivo-Cv" id="H2ObjetivoCv">Objetivos</h2>
             <p class="Objetivo-Cv" id="ObjetivoCv"></p>
              
@@ -333,8 +337,10 @@
             <h2 class="ExperienciaCv" id="H2ExperienciaCv">Experiência Profissional</h2>
             <p class="ListaCargo-Cv" id="ListaCargoCv"></p>
             <p class="DescriçãoCV" id="DescriçãoCv"></p>
+            <h2 class="H2Habilidades" id="H2Habilidades">Habilidades Técnicas</h2>
             <p class="HabilidadesCv" id="HabilidadesCv"></p>
             <p class="HabilitaçãoCv" id="HabilitaçãoCv"></p>
+            <h2 class="informacoes-adicionais" id="Informacoes">Informações Adicionais</h2>
             <p class="InformaçõesAdicionaisCv" id="InformaçõesAdicionaisCv"></p>
             
           <button type="submit" class="Inprimir BtnImprimir">Imprimir Currículo</button>
@@ -425,7 +431,7 @@
            </div>
 
            <div class="destaque-card">
-             <a href="" target="_blank" class="destaque-link">
+             <a href="https://www.instagram.com/empregandoirece" target="_blank" class="destaque-link">
                <img src="Imagens/Emprega Irece.jpg" alt="Emprega Irece" class="destaque-imagem">
                <div class="destaque-content">
                  <h3 class="destaque-titulo">Emprega Irece</h3>

@@ -37,13 +37,11 @@ function atualizarLista() {
 
   if (cursos.length > 0) {
         H2FormacaoCv.style.display = 'block';
-        H2FormacaoCv.style.marginBottom = "1vh";
     }
     
   cursos.forEach((item) => {
         const ul = document.createElement("ul"); 
-        ul.innerHTML = `<strong>${item.curso}</strong>  ${item.instituicao} ${item.ano}`;
-        ul.style.marginBottom = "1.5vh";
+        ul.innerHTML = `<strong>${item.curso}:</strong>  ${item.instituicao} ${item.ano}`;
         listaCursos.appendChild(ul);
     });
    
@@ -70,7 +68,6 @@ function EnsinoMédio(){
     } else if(Completo.checked){
         EnsinoMedioCv1.style.display = 'block';
         EnsinoMedioCv1.innerHTML = `<strong>Ensino Médio:</strong> ${Colegio.value} (${DataDeFormação.value})`;
-        EnsinoMedioCv1.style.marginBottom = "1vh";
     }
 };
 
@@ -90,7 +87,7 @@ BtnAdicionarExp.addEventListener("click", (e) => {
     let descricao = document.getElementById("DescricaoAtividades").value;
 
     // Validação simples
-    if (cargo === "" || empresa === "" || periodo === "" || descricao === "") {
+    if (cargo === "" || empresa === "" || periodo === "") {
         alert("Preencha todos os campos!");
         return;
     }
@@ -111,9 +108,12 @@ function atualizarListaExp() {
 
     // A renderização deve acontecer AQUI dentro
     listaExperiencia.forEach((item) => {
-        const ul = document.createElement("ul"); // Melhor usar <li> em vez de <ul> dentro de um container <ul>
-        ul.innerHTML = `<strong>${item.cargo.toUpperCase()}</strong> - ${item.empresa} (${item.periodo}) <br> ${item.descricao}`;
-        ul.style.marginBottom = "1.5vh";
+        const ul = document.createElement("ul"); 
+        ul.innerHTML = `<strong>${item.empresa}</strong> <br> 
+        <strong>Cargo:</strong> ${item.cargo.toUpperCase()} <br>
+        <strong>Período:</strong> ${item.periodo}<br> 
+        ${item.descricao}`;
+        ul.style.marginBottom = "1vh";
         ListaCargo.appendChild(ul);
     });
 }
@@ -127,69 +127,117 @@ function limparCamposExp() {
 
 //-------------------------Quarta div Habilidades técnicas---------------------//
 
-const BtnAdicionarHabili = document.getElementById('btnAdicionarHabili');
 let H2HabilidadesCv = document.getElementById('H2HabilidadesCv');
-let Habilitação = document.getElementById('HabilitaçãoCv');
+let HabilidadesCV = document.getElementById('HabilidadesCv'); // Correção do ID no HTML
+let btnHabilidades = document.getElementById('btnHabilidades');
+let listaHabilidades = []; // Array para armazenar as habilidades
+
+btnHabilidades.addEventListener("click", (e) => {
+    e.preventDefault();
+    atualizarListaHab();
+    limparCamposHabilidade()// Limpa após adicionar
+});
+
+function atualizarListaHab() {
+    let InputHabilidades = document.getElementById('Habilidades'); // O input de texto
+    let H2Habilidades = document.getElementById('H2Habilidades'); // Título H2
+
+    // 1. Pega o VALOR do input (.value)
+    let textoHabilidade = InputHabilidades.value;
+
+    if (textoHabilidade.trim() === "") return; // Não adiciona vazio
+
+    // 2. Adiciona ao Array
+    listaHabilidades.push(textoHabilidade);
+
+    // 3. Atualiza o DOM
+    H2Habilidades.style.display = 'block';
+
+    const ul = document.createElement("ul");
+    ul.innerHTML = `<li>${textoHabilidade}</li>`;
+    ul.style.listStyleType = "none"; // Adiciona o estilo de lista
+    HabilidadesCV.appendChild(ul);
+}
+
+// 4. Função para limpar o campo
+function limparCamposHabilidade() {
+    document.getElementById('Habilidades').value = "";
+}
+
+const btnAdicionarHabilitação = document.getElementById('btnAdicionarHabilitação');
+let Habilitação = document.getElementById('HabilitaçãoCv'); // Correção do ID no HTML
+
+btnAdicionarHabilitação.addEventListener("click", (e) => {
+    e.preventDefault(); // Evita o envio do formulário  
+    Hablitação();// Chama a função para atualizar a habilitação no currículo
+});
+
 let habilitaçãoA = document.getElementById('A');
 let habilitaçãoB = document.getElementById('B');
 let habilitaçãoAB = document.getElementById('A/B');
 let habilitaçãoOutros = document.getElementById('Outros');
-let InputOutros = document.getElementById('InputOutras');
-
-BtnAdicionarHabili.addEventListener("click", (e) => {
-    e.preventDefault(); // Evita o envio do formulário  
-    let InputHabilidades = document.getElementById('Habilidades');
-    let HabilidadesCV = document.getElementById('HabilidadesCv');
-    HabilidadesCV.innerHTML = `<strong>Habilidades <br> </strong> ${InputHabilidades.value}`;
-    HabilidadesCV.style.marginBottom = "1vh";
-
-    atualizarListaHab(); // Atualiza a lista exibida
-    limparCamposHab(); // Limpa os campos após adicionar
-    Hablitação();// Chama a função para atualizar a habilitação no currículo
-});
-
-// Função para atualizar a lista de habilidades
-function atualizarListaHab() {
-    
-    let InformaçõesAdicionais = document.getElementById('InformaçõesAdicionais').value;
-    let InformaçõesAdicionaisCV = document.getElementById('InformaçõesAdicionaisCv');
-    
-    InformaçõesAdicionaisCV.innerHTML = `<strong>Informações Adicionais:<br> </strong> ${InformaçõesAdicionais}`;
-    InformaçõesAdicionaisCV.style.marginBottom = "1vh";
-}
-
-function limparCamposHab() {
-    document.getElementById("Habilidades").value = "";
-    document.getElementById("InformaçõesAdicionais").value = "";
-    
-}
+let InputOutros = document.getElementById('InputOutros');
 function Hablitação(){
     if(habilitaçãoA.checked){
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> A`;
-        Habilitação.style.marginBottom = "1vh";
+        Habilitação.style.display = 'block';
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> A`;
     } else if(habilitaçãoB.checked){
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> B`;
-        Habilitação.style.marginBottom = "1vh";
+        Habilitação.style.display = 'block';
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> B`;
 
     } else if(habilitaçãoAB.checked){
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> A/B`;
-        Habilitação.style.marginBottom = "1vh";
+        Habilitação.style.display = 'block';
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> A/B`;
     } else if(habilitaçãoOutros.checked){
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> ${InputOutros.value}`;
-        Habilitação.style.marginBottom = "1vh";
+        Habilitação.style.display = 'block';
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> ${InputOutros.value}`;
 
     } 
 };
 function mostrarInputOutros(){
-    document.getElementById('HabilitaçãoOutras');
+    
     if(habilitaçãoOutros.checked){
-        InputOutros.style.display = 'block';
+        DivInputOutros.style.display = 'block';
     }else if(habilitaçãoA.checked || habilitaçãoB.checked || habilitaçãoAB.checked){
-        InputOutros.style.display = 'none';
-    } else{
-        InputOutros.style.display = 'none';
+        DivInputOutros.style.display = 'none';
+    }
+     else {
+       DivInputOutros.style.display = 'none';
     }
 };
+
+let btnAdicionarInfoAdicional = document.getElementById('btnAdicionarInfoAdicional');
+let IformacoesAdd = []; // Array para armazenar as informações adicionais
+btnAdicionarInfoAdicional.addEventListener("click", (e) => {
+    e.preventDefault(); // Evita o envio do formulário
+    atualizarIformações(); // Atualiza a lista exibida
+    limparCamposHab(); // Limpa os campos após adicionar
+});
+// Função para atualizar a lista de habilidades
+function atualizarIformações() {
+    let Informacoes = document.getElementById('Informacoes');
+    let InformaçõesAdicionais = document.getElementById('InformaçõesAdicionais').value;
+    let InformaçõesAdicionaisCV = document.getElementById('InformaçõesAdicionaisCv');
+    let Informaçoes = [];
+    Informacoes.style.display = 'block';
+
+    if (InformaçõesAdicionais.trim() === "") return; // Não adiciona vazio
+
+    Informaçoes.push(InformaçõesAdicionais);
+    InformaçõesAdicionaisCV.style.display = 'block';
+    InformaçõesAdicionaisCV.style.marginBottom = "1vh";
+    const ul = document.createElement("ul");
+    ul.innerHTML = `<li>${InformaçõesAdicionais}</li>`;
+    ul.style.listStyleType = "none"; // Adiciona o estilo de lista
+    InformaçõesAdicionaisCV.appendChild(ul);
+    
+}
+
+function limparCamposHab() {
+    document.getElementById("InformaçõesAdicionais").value = "";
+    
+}
+
 //-------------------------AnoAtual do Rodapé---------------------//
 let DivFooterP = document.getElementById('DivFooterP@');  
 let data = new Date();
