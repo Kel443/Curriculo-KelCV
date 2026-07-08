@@ -21,64 +21,63 @@ let lista = document.getElementById("ListaFormacao");
 Nome.addEventListener('input', () => {
     let NomePessoa = Nome.value;
     NomeCV.innerHTML = `${NomePessoa}`;
+    window.salvarDadosLocalmente();
 });
 
-    Cidade.addEventListener('input', () => {
-        let EstadoPessoa = Estados.value;
-        let NomeCidade = Cidade.value;
-        cidadeCv.innerHTML = `<strong>Cidade:</strong> ${NomeCidade}/${EstadoPessoa.toUpperCase()}`;
-    });
+Cidade.addEventListener('input', () => {
+    let EstadoPessoa = Estados.value;
+    let NomeCidade = Cidade.value;
+    cidadeCv.innerHTML = `<strong>Cidade:</strong> ${NomeCidade}/${EstadoPessoa.toUpperCase()}`;
+    window.salvarDadosLocalmente();
+});
 
-        Email.addEventListener('input', () => {
-            let EmailPessoa = Email.value;
-            EmailCv.innerHTML = `<strong>Email:</strong> ${EmailPessoa}`;
-        });
+Estados.addEventListener('change', () => {
+    let EstadoPessoa = Estados.value;
+    let NomeCidade = Cidade.value;
+    cidadeCv.innerHTML = `<strong>Cidade:</strong> ${NomeCidade}/${EstadoPessoa.toUpperCase()}`;
+    window.salvarDadosLocalmente();
+});
 
-            Whatsapp.addEventListener('input', () => {
-                let DDDEstado = DDD.value;
-                let WhatsappPessoa = Whatsapp.value;
-                WhatsappCv.innerHTML = `<strong>Telefone:</strong> (${DDDEstado}) ${WhatsappPessoa}`;
-            });
+Email.addEventListener('input', () => {
+    let EmailPessoa = Email.value;
+    EmailCv.innerHTML = `<strong>Email:</strong> ${EmailPessoa}`;
+    window.salvarDadosLocalmente();
+});
 
-                InputGithub.addEventListener('input', () => {
-                    let GithubPessoa = InputGithub.value;
-                    GithubCv.innerHTML = `<strong>Github:</strong> ${GithubPessoa}`;
-                });
+Whatsapp.addEventListener('input', () => {
+    let DDDEstado = DDD.value;
+    let WhatsappPessoa = Whatsapp.value;
+    WhatsappCv.innerHTML = `<strong>Telefone:</strong> (${DDDEstado}) ${WhatsappPessoa}`;
+    window.salvarDadosLocalmente();
+});
 
-                    InputLinkedIn.addEventListener('input', () => {
-                        let LinkedInPessoa = InputLinkedIn.value;
-                        LinkedInCv.innerHTML = `<strong>LinkedIn:</strong> ${LinkedInPessoa}`;
-                    });
+DDD.addEventListener('input', () => {
+    let DDDEstado = DDD.value;
+    let WhatsappPessoa = Whatsapp.value;
+    WhatsappCv.innerHTML = `<strong>Telefone:</strong> (${DDDEstado}) ${WhatsappPessoa}`;
+    window.salvarDadosLocalmente();
+});
 
-                        BtnAdicionar.addEventListener('input', () => {
-                            adicionarFormacao();
-                            H2ObjetivoCv.style.display = 'block';
-                        });
+InputGithub.addEventListener('input', () => {
+    let GithubPessoa = InputGithub.value;
+    GithubCv.innerHTML = `<strong>Github:</strong> ${GithubPessoa}`;
+    window.salvarDadosLocalmente();
+});
 
-                            Objetivos.addEventListener('input', () => {
-                                let Objetivo = Objetivos.value;
-                                H2ObjetivoCv.style.display = 'block';
-                                ObjetivoCv.style.display = 'block';
-                                ObjetivoCv.innerHTML = `${Objetivo}`;
-                            });
-                            
-                           
-                            Curso2.addEventListener('input', () => {
-                                  let Curso3 = Curso2.value;
-                                   CursoCv.innerHTML = `<strong>${Curso3}</strong> - ${instituicao} (${ano})`;
-                                });
+InputLinkedIn.addEventListener('input', () => {
+    let LinkedInPessoa = InputLinkedIn.value;
+    LinkedInCv.innerHTML = `<strong>LinkedIn:</strong> ${LinkedInPessoa}`;
+    window.salvarDadosLocalmente();
+});
 
-                                NomeInstituicao2.addEventListener('input', () => {
-                                    let Curso3 = Curso2.value;
-                                    let NomeInstituicao3 = NomeInstituicao2.value;
-                                    CursoCv.innerHTML = `<strong>${Curso3}</strong> - ${NomeInstituicao3} (${ano})`;
-                                });
-                                    AnoConclusao2.addEventListener('input', () => {
-                                        let Curso3 = Curso2.value;
-                                        let NomeInstituicao3 = NomeInstituicao2.value;
-                                        let AnoConclusao2 = AnoConclusao2.value;
-                                        CursoCv.innerHTML = `<strong>${Curso3}</strong> - ${NomeInstituicao3} (${NomeInstituicao3})`;
-                                    });
+Objetivos.addEventListener('input', () => {
+    let Objetivo = Objetivos.value;
+    H2ObjetivoCv.style.display = 'block';
+    ObjetivoCv.style.display = 'block';
+    ObjetivoCv.innerHTML = `${Objetivo}`;
+    window.salvarDadosLocalmente();
+});
+
                                        
 
                                       

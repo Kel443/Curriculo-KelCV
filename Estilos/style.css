@@ -96,6 +96,7 @@ body {
 
 .container {
     display: flex;
+    justify-content: center;
     margin-top: 1.5vh;
     border-radius: 2vh;
     margin-bottom: 2vh;
@@ -103,6 +104,7 @@ body {
 
 .DivEtapa1 {
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -155,7 +157,6 @@ input:focus {
     outline: none;
     box-shadow: none;
 }
-
 .section1 {
     width: 50vw;
     padding: 3vh;
@@ -172,6 +173,127 @@ input:focus {
     background-repeat: no-repeat;
     backface-visibility: visible;
     box-shadow: 0px 0px 10px 1px var(--Cinza-Cinza);
+}
+
+/* Aviso de Edição Direta no Currículo */
+.aviso-edicao-direta {
+    margin-bottom: 2vh;
+    padding: 10px;
+    background-color: rgba(15, 76, 92, 0.1);
+    border-left: 4px solid var(--Azul-petróleo);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--Azul-petróleo);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Placeholder para elementos contenteditable */
+[contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color: #a0aec0;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px dashed var(--Azul-petróleo);
+    outline-offset: 4px;
+    background-color: rgba(15, 76, 92, 0.05);
+    border-radius: 4px;
+}
+
+/* Botão de reset de dados */
+.btn-resetar-dados {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-resetar-dados:hover {
+    background-color: #c0392b;
+    transform: scale(1.02);
+}
+.btn-resetar-dados:active {
+    transform: scale(0.98);
+}
+
+/* Cabeçalho do Currículo - Foto e Alinhamentos */
+.cv-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 2vh;
+    transition: all 0.3s ease;
+}
+
+.foto-cv-container {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.foto-cv-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--Azul-petróleo);
+}
+
+.cv-header.alinhamento-esquerda {
+    flex-direction: row !important;
+    text-align: left !important;
+}
+.cv-header.alinhamento-esquerda .cv-header-text {
+    text-align: left !important;
+}
+.cv-header.alinhamento-esquerda .Nome-Cv {
+    text-align: left !important;
+}
+
+.cv-header.alinhamento-direita {
+    flex-direction: row-reverse !important;
+    text-align: right !important;
+}
+.cv-header.alinhamento-direita .cv-header-text {
+    text-align: right !important;
+}
+.cv-header.alinhamento-direita .Nome-Cv {
+    text-align: right !important;
+}
+
+.cv-header.alinhamento-centro {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+.cv-header.alinhamento-centro .cv-header-text {
+    text-align: center !important;
+    width: 100% !important;
+}
+.cv-header.alinhamento-centro .Nome-Cv {
+    text-align: center !important;
+}
+
+/* Botões de Alinhamento da foto no formulário */
+.BtnAlinhamento {
+    transition: all 0.2s ease;
+}
+.BtnAlinhamento:hover {
+    background-color: #f1f2f6;
+    color: var(--Botoes);
+}
+.BtnAlinhamento.active {
+    background-color: var(--Botoes) !important;
+    color: white !important;
 }
 
 .Nome-Cv {
@@ -676,10 +798,10 @@ footer {
 @media print {
     @page {
         size: A4;
-        margin-top: 1cm;
-        margin-right: 1cm;
-        margin-bottom: 1cm;
-        margin-left: 1cm; /* Superior, Direita, Inferior, Esquerda */
+        margin-top: 1.5cm;
+        margin-right: 1.5cm;
+        margin-bottom: 1.5cm;
+        margin-left: 1.5cm;
         font-family: Arial, Helvetica, sans-serif;
     }
     
@@ -687,25 +809,26 @@ footer {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        font-size: 12pt;
-        line-height: 1.5;
+        font-size: 11pt;
+        line-height: 1.4;
         color: #000;
-        background: #fff
-    }
-    .NavInicial{
-        display: none;
+        background: #fff !important;
     }
     
+    .NavInicial {
+        display: none !important;
+    }
     
     .container {
-        display: block;
-        margin: 0;
-        padding: 0;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
     .formulario1, .formulario2, .formulario3,  
     .Titulo, .Descrição, footer, 
-    .BtnImprimir, .DivBtnPrint {
+    .BtnImprimir, .DivBtnPrint, .aviso-edicao-direta, .btn-resetar-dados,
+    .btn-remover-item {
         display: none !important;
     }
     
@@ -717,60 +840,89 @@ footer {
         box-shadow: none !important;
         margin: 0 !important;
         padding: 0 !important;
-        
+        background-image: none !important;
+        background-color: white !important;
     }
     
     .section1, .section1 * {
         color: black !important;
+        background-color: transparent !important;
     }
-   
-    .section-vagas, .container-contribuicao{
-        display: none;
+    
+    .foto-cv-container img {
+        border-color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
-    .LinhaHorizontal{
-        display: block;
-        color: black;
-        border: 1px solid black;
-        margin-top: 1vh;
+    
+    .section-vagas, .container-contribuicao {
+        display: none !important;
     }
-    .Formacao-Cv{
-        display: block;
-        margin-top: 1.5vh;
-        margin-bottom: 1vh;
+    
+    .LinhaHorizontal {
+        display: block !important;
+        color: black !important;
+        border: none !important;
+        border-bottom: 1px solid black !important;
+        margin-top: 1.5vh !important;
+        margin-bottom: 1.5vh !important;
     }
-    .EnsinoMedioCv{
-        display: block;
-        margin-top: -1vh;
-        margin-bottom: 1vh;
+    
+    .Formacao-Cv {
+        display: block !important;
+        margin-top: 1.5vh !important;
+        margin-bottom: 1vh !important;
     }
-    .lista{
-        display: block;
-        margin-top: -1vh;
-        margin-bottom: 1vh;
+    
+    .EnsinoMedioCv {
+        display: block !important;
+        margin-top: -1vh !important;
+        margin-bottom: 1vh !important;
     }
-    .ExperienciaCv{
-        display: block;
-        margin-top: -1vh;
+    
+    .lista {
+        display: block !important;
+        margin-top: -1vh !important;
+        margin-bottom: 1vh !important;
     }
-    .ListaCargo-Cv{
-        display: block;
-        margin-top: -1vh;
+    
+    .ExperienciaCv {
+        display: block !important;
+        margin-top: -1vh !important;
     }
-    .H2Habilidades{
-        display: block;
-        margin-top: 1vh;
+    
+    .ListaCargo-Cv {
+        display: block !important;
+        margin-top: -1vh !important;
     }
-    .HabilidadesCv{
-        display: block;
-        margin-top: -0.5vh;
+    
+    .H2Habilidades {
+        display: block !important;
+        margin-top: 1vh !important;
     }
-    .informacoes-adicionais{
-        display: block;
-        margin-top: -0.5vh;
-        font-size: 1.2rem;
-        font-weight: 650;
+    
+    .HabilidadesCv {
+        display: block !important;
+        margin-top: -0.5vh !important;
     }
-    .InformaçõesAdicionaisCv{
-        margin-top: -0.5vh;
+    
+    .informacoes-adicionais {
+        display: block !important;
+        margin-top: -0.5vh !important;
+        font-size: 1.2rem !important;
+        font-weight: 650 !important;
+    }
+    
+    .InformaçõesAdicionaisCv {
+        margin-top: -0.5vh !important;
+    }
+
+    [contenteditable="true"]:empty:before {
+        display: none !important;
+    }
+
+    [contenteditable="true"]:focus {
+        outline: none !important;
+        background-color: transparent !important;
     }
 }

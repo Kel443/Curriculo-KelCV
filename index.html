@@ -35,7 +35,10 @@
     <section class="container">
         <form action=""  autocomplete="on" class="formulario1 scroll-animate scroll-animate-delay-2" id="FormFormulario1">
             <div class="DivEtapa1" id="DivEtapa1">
-              <h2>Dados Pessoais</h2>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5vh; flex-wrap: wrap; gap: 10px;">
+                <h2>Dados Pessoais</h2>
+                <button type="button" id="BtnResetarDados" class="btn-resetar-dados">Limpar Currículo</button>
+              </div>
                 <label for="Nome">Nome completo</label>
                 <input type="text"  id="Nome" placeholder="Digite seu nome completo">
                 <label for="Estados">Estados</label>
@@ -104,6 +107,37 @@
                   <h4 class="A4Social">Digite sua rede social</h4>
                   <input type="text" class="InputGithub"  id="InputGithub" placeholder="Github">
                   <input type="text" class="InputLinkedIn"  id="InputLinkedIn" placeholder="LinkedIn">
+                </div>
+
+                <!-- Seção de Foto Opcional -->
+                <div class="secao-foto-controle" style="margin-top: 2vh; border-top: 1px solid rgba(0, 0, 0, 0.15); padding-top: 2vh;">
+                  <h4 style="font-size: 1.1rem; margin-bottom: 1vh;">Foto do Currículo</h4>
+                  
+                  <div class="opcoes-foto-toggle" style="margin-bottom: 1.5vh;">
+                    <label class="switch-container" style="display: flex; align-items: center; cursor: pointer; font-weight: normal; gap: 8px;">
+                      <input type="checkbox" id="IncluirFoto" name="incluir-foto" style="margin-top: 0; width: auto; height: auto; cursor: pointer;">
+                      <span>Deseja incluir foto no currículo?</span>
+                    </label>
+                  </div>
+                  
+                  <div id="ControleFotoUpload" class="controle-foto-upload" style="display: none; flex-direction: column; gap: 1.5vh;">
+                    <div>
+                      <label for="FotoInput" class="custom-file-upload" style="display: inline-block; background-color: var(--Botoes); color: white; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: background 0.3s; font-weight: 600;">
+                        📁 Escolher Foto
+                      </label>
+                      <input type="file" id="FotoInput" accept="image/*" style="display: none;">
+                      <span id="FotoNomeArquivo" style="font-size: 0.85rem; color: #666; margin-left: 10px; word-break: break-all;">Nenhuma foto selecionada</span>
+                    </div>
+                    
+                    <div>
+                      <h5 style="margin-bottom: 1vh; font-size: 0.95rem;">Posição da Foto no Currículo:</h5>
+                      <div class="alinhamento-foto" style="display: flex; gap: 8px;">
+                        <button type="button" class="BtnAlinhamento active" data-posicao="esquerda" style="flex: 1; margin-top: 0; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; border: 1px solid var(--Botoes); background: var(--Botoes); color: white; cursor: pointer; font-weight: 600;">Esquerda</button>
+                        <button type="button" class="BtnAlinhamento" data-posicao="centro" style="flex: 1; margin-top: 0; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; border: 1px solid var(--Botoes); background: white; color: var(--Botoes); cursor: pointer; font-weight: 600;">Centro</button>
+                        <button type="button" class="BtnAlinhamento" data-posicao="direita" style="flex: 1; margin-top: 0; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; border: 1px solid var(--Botoes); background: white; color: var(--Botoes); cursor: pointer; font-weight: 600;">Direita</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
             <button type="submit" class="Prosegir Btn-submit1">
@@ -317,31 +351,47 @@
         </form> 
 
 <!---------------------------Mostrar as informaçoes da pessoa no curriculo--------------------->        
-        <section class="section1 scroll-animate scroll-animate-delay-4">
-            <h2 class="Nome-Cv" id="NomeCv"></h2>
-            <p class="Cidade-Cv" id="CidadeCv"></p>
-            <p class="email-Cv" id="EmailCv"></p>
-            <p class="DDD-Cv" id="DDDCv"></p>
-            <p class="Whatsapp-Cv" id="WhatsappCv"></p>
-            <p class="Github-Cv" id="GithubCv"></p>
-            <p class="LinkedIn-Cv" id="LinkedInCv"></p>
-<hr class="LinhaHorizontal">
+        <section class="section1 scroll-animate scroll-animate-delay-4" id="SectionCurriculo">
+            <!-- Aviso de Edição Direta -->
+            <div class="aviso-edicao-direta" id="AvisoEdicaoDireta" style="margin-bottom: 2vh; padding: 10px; background-color: rgba(15, 76, 92, 0.1); border-left: 4px solid var(--Azul-petróleo); border-radius: 4px; font-size: 0.9rem; color: var(--Azul-petróleo); display: flex; align-items: center; gap: 8px;">
+                <span>✏️</span>
+                <span><strong>Modo de Revisão:</strong> Você pode clicar e editar qualquer texto diretamente na folha do currículo abaixo!</span>
+            </div>
+
+            <!-- Cabeçalho do Currículo (Foto + Dados Pessoais) -->
+            <div class="cv-header" id="CvHeader" style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2vh; flex-direction: row;">
+                <div class="foto-cv-container" id="FotoCvContainer" style="display: none; flex-shrink: 0; width: 120px; height: 120px;">
+                    <img id="FotoCv" src="" alt="Foto do Perfil" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--Azul-petróleo);">
+                </div>
+                <div class="cv-header-text" style="flex-grow: 1;">
+                    <h2 class="Nome-Cv" id="NomeCv" contenteditable="true" style="text-align: left; margin-bottom: 1vh;" data-placeholder="Seu Nome Completo"></h2>
+                    <p class="Cidade-Cv" id="CidadeCv" contenteditable="true" data-placeholder="Cidade - Estado"></p>
+                    <p class="email-Cv" id="EmailCv" contenteditable="true" data-placeholder="E-mail"></p>
+                    <p class="Whatsapp-Cv" id="WhatsappCv" contenteditable="true" data-placeholder="Telefone"></p>
+                    <p class="Github-Cv" id="GithubCv" contenteditable="true" data-placeholder="Link do Github"></p>
+                    <p class="LinkedIn-Cv" id="LinkedInCv" contenteditable="true" data-placeholder="Link do LinkedIn"></p>
+                </div>
+            </div>
+            
+            <hr class="LinhaHorizontal">
+            
             <h2 class="Objetivo-Cv" id="H2ObjetivoCv">Objetivos</h2>
-            <p class="Objetivo-Cv" id="ObjetivoCv"></p>
-             
+            <p class="Objetivo-Cv" id="ObjetivoCv" contenteditable="true" data-placeholder="Escreva seu objetivo profissional aqui..."></p>
             
             <h2 class="Formacao-Cv" id="H2FormacaoCv">Formação</h2>
-            <p class="EnsinoMedioCv" id="EnsinoMedioCv"></p>
-            <p class="lista" id="ListaFormacao"></p>
+            <p class="EnsinoMedioCv" id="EnsinoMedioCv" contenteditable="true" data-placeholder="Ensino Médio..."></p>
+            <div class="lista" id="ListaFormacao" contenteditable="true"></div>
             
             <h2 class="ExperienciaCv" id="H2ExperienciaCv">Experiência Profissional</h2>
-            <p class="ListaCargo-Cv" id="ListaCargoCv"></p>
-            <p class="DescriçãoCV" id="DescriçãoCv"></p>
+            <div class="ListaCargo-Cv" id="ListaCargoCv" contenteditable="true"></div>
+            <p class="DescriçãoCV" id="DescriçãoCv" style="display: none;"></p>
+            
             <h2 class="H2Habilidades" id="H2Habilidades">Habilidades Técnicas</h2>
-            <p class="HabilidadesCv" id="HabilidadesCv"></p>
-            <p class="HabilitaçãoCv" id="HabilitaçãoCv"></p>
+            <div class="HabilidadesCv" id="HabilidadesCv" contenteditable="true"></div>
+            <p class="HabilitaçãoCv" id="HabilitaçãoCv" contenteditable="true" data-placeholder="Habilitações..."></p>
+            
             <h2 class="informacoes-adicionais" id="Informacoes">Informações Adicionais</h2>
-            <p class="InformaçõesAdicionaisCv" id="InformaçõesAdicionaisCv"></p>
+            <div class="InformaçõesAdicionaisCv" id="InformaçõesAdicionaisCv" contenteditable="true"></div>
             
           <button type="submit" class="Inprimir BtnImprimir">Imprimir Currículo</button>
               

@@ -12,55 +12,94 @@ let Colegio = document.getElementById('Colegio');
 let DataDeFormação = document.getElementById('DataDeFormação');
 let EnsinoMedioCv1 = document.getElementById('EnsinoMedioCv');
 
+// --- ARRAYS DE ESTADO GLOBAL PARA O CURRÍCULO ---
+window.cursos = []; 
+window.listaExperiencia = []; 
+window.listaHabilidades = []; 
+window.listaInfoAdicional = []; // Resolvido bug do site original
 
-let cursos = []; // Array para armazenar os cursos
+// --- FUNÇÕES DE REMOÇÃO INDIVIDUAL ---
+window.removerCurso = function(index) {
+    window.cursos.splice(index, 1);
+    window.atualizarLista();
+    window.salvarDadosLocalmente();
+};
 
-// Botão "Salvar todos"
+window.removerExperiencia = function(index) {
+    window.listaExperiencia.splice(index, 1);
+    window.atualizarListaExp();
+    window.salvarDadosLocalmente();
+};
+
+window.removerHabilidade = function(index) {
+    window.listaHabilidades.splice(index, 1);
+    atualizarListaHabDOM();
+    window.salvarDadosLocalmente();
+};
+
+window.removerInfoAdicional = function(index) {
+    window.listaInfoAdicional.splice(index, 1);
+    atualizarInfoAdicionalDOM();
+    window.salvarDadosLocalmente();
+};
+
+// --- GESTÃO DE CURSOS (FORMAÇÃO) ---
 btnAdicionar.addEventListener("click", () => {
   let curso = document.getElementById("Curso").value;
   let instituicao = document.getElementById("NomeInstituicao").value;
   let ano = document.getElementById("AnoConclusao").value;
 
+  if (curso.trim() === "" || instituicao.trim() === "") {
+      alert("Preencha o nome do curso e da instituição!");
+      return;
+  }
   
-  cursos.push({ curso, instituicao, ano }); // Adiciona o curso ao array
-  atualizarLista();// Atualiza a lista exibida
-  limparCampos(); // Limpa os campos após adicionar
-  EnsinoMédio(); // Chama a função para atualizar o ensino médio no currículo
+  window.cursos.push({ curso, instituicao, ano }); 
+  window.atualizarLista();
+  limparCampos(); 
+  EnsinoMédio(); 
+  window.salvarDadosLocalmente();
 });
 
-// Função para atualizar a lista
-function atualizarLista() {
-  let curso = document.getElementById("Curso").value;
-  let instituicao = document.getElementById("NomeInstituicao").value;
-  let ano = document.getElementById("AnoConclusao").value;
+window.atualizarLista = function() {
   listaCursos.innerHTML = "";
 
-  if (cursos.length > 0) {
+  if (window.cursos.length > 0) {
         H2FormacaoCv.style.display = 'block';
-    }
+  } else {
+        H2FormacaoCv.style.display = 'none';
+  }
     
-  cursos.forEach((item) => {
+  window.cursos.forEach((item, index) => {
         const ul = document.createElement("ul"); 
-        ul.innerHTML = `<strong>${item.curso}:</strong>  ${item.instituicao} ${item.ano}`;
+        ul.style.position = 'relative';
+        ul.style.display = 'flex';
+        ul.style.alignItems = 'center';
+        ul.style.justifyContent = 'space-between';
+        ul.style.margin = '4px 0';
+        ul.innerHTML = `<div><strong>${item.curso}:</strong> ${item.instituicao} (${item.ano})</div>
+        <span class="btn-remover-item" onclick="window.removerCurso(${index})" style="cursor:pointer; color:#e74c3c; margin-left:10px; font-size:0.8rem;" title="Remover curso">❌</span>`;
         listaCursos.appendChild(ul);
-    });
-   
-}
+  });
+};
+
 function limparCampos() {
   document.getElementById("Curso").value = "";
   document.getElementById("NomeInstituicao").value = "";
   document.getElementById("AnoConclusao").value = "";
 }
 
+// --- ENSINO MÉDIO ---
 function DivEnsinoMédio(){
      if(Incompleto.checked){
         DiviformaçãoEscola.style.display = 'none';
-        
     } else if(Completo.checked){
         DiviformaçãoEscola.style.display = 'block';
-
     }
-};
+    EnsinoMédio();
+    window.salvarDadosLocalmente();
+}
+
 function EnsinoMédio(){
     if(Incompleto.checked){
         EnsinoMedioCv1.style.display = 'block';
@@ -68,55 +107,77 @@ function EnsinoMédio(){
     } else if(Completo.checked){
         EnsinoMedioCv1.style.display = 'block';
         EnsinoMedioCv1.innerHTML = `<strong>Ensino Médio:</strong> ${Colegio.value} (${DataDeFormação.value})`;
+    } else {
+        EnsinoMedioCv1.style.display = 'none';
     }
-};
+}
 
-//-------------------------Terceira div Experiencia profissional---------------------//
+// Escutar digitação nos campos do ensino médio para atualizar currículo e localStorage
+Colegio.addEventListener('input', () => {
+    EnsinoMédio();
+    window.salvarDadosLocalmente();
+});
+DataDeFormação.addEventListener('input', () => {
+    EnsinoMédio();
+    window.salvarDadosLocalmente();
+});
 
+// Tornar funções acessíveis globalmente
+window.DivEnsinoMédio = DivEnsinoMédio;
+window.EnsinoMédio = EnsinoMédio;
+
+
+// --- EXPERIÊNCIA PROFISSIONAL ---
 const BtnAdicionarExp = document.getElementById('btnAdicionarExp');
-let H2ExperienciaCv = document.getElementById('H2ExperienciaCv');
 let ListaCargo = document.getElementById('ListaCargoCv');
-let listaExperiencia = []; // Array para armazenar as experiências
 
 BtnAdicionarExp.addEventListener("click", (e) => {
-    e.preventDefault(); // Evita o envio do formulário
+    e.preventDefault();
 
     let cargo = document.getElementById("Cargo").value;
     let empresa = document.getElementById("NomeEmpresa").value;
     let periodo = document.getElementById("Periodo").value;
     let descricao = document.getElementById("DescricaoAtividades").value;
 
-    // Validação simples
     if (cargo === "" || empresa === "" || periodo === "") {
-        alert("Preencha todos os campos!");
+        alert("Preencha o cargo, empresa e período!");
         return;
     }
 
-    listaExperiencia.push({ cargo, empresa, periodo, descricao }); // Adiciona a experiência ao array
-    atualizarListaExp(); // Atualiza a lista exibida
-    limparCamposExp(); // Limpa os campos após adicionar
+    window.listaExperiencia.push({ cargo, empresa, periodo, descricao }); 
+    window.atualizarListaExp(); 
+    limparCamposExp(); 
+    window.salvarDadosLocalmente();
 });
 
-// Função para atualizar a lista de experiências
-function atualizarListaExp() {
-    ListaCargo.innerHTML = ""; // Limpa a lista atual
+window.atualizarListaExp = function() {
+    ListaCargo.innerHTML = ""; 
 
-    if (listaExperiencia.length > 0) {
+    if (window.listaExperiencia.length > 0) {
         H2ExperienciaCv.style.display = 'block';
         H2ExperienciaCv.style.marginBottom = "1vh";
+    } else {
+        H2ExperienciaCv.style.display = 'none';
     }
 
-    // A renderização deve acontecer AQUI dentro
-    listaExperiencia.forEach((item) => {
+    window.listaExperiencia.forEach((item, index) => {
         const ul = document.createElement("ul"); 
-        ul.innerHTML = `<strong>${item.empresa}</strong> <br> 
-        <strong>Cargo:</strong> ${item.cargo.toUpperCase()} <br>
-        <strong>Período:</strong> ${item.periodo}<br> 
-        ${item.descricao}`;
+        ul.style.position = 'relative';
+        ul.style.display = 'flex';
+        ul.style.alignItems = 'flex-start';
+        ul.style.justifyContent = 'space-between';
+        ul.style.margin = '8px 0';
+        ul.innerHTML = `<div style="flex-grow: 1;">
+            <strong>${item.empresa}</strong> <br> 
+            <strong>Cargo:</strong> ${item.cargo.toUpperCase()} <br>
+            <strong>Período:</strong> ${item.periodo}<br> 
+            ${item.descricao}
+        </div>
+        <span class="btn-remover-item" onclick="window.removerExperiencia(${index})" style="cursor:pointer; color:#e74c3c; margin-left:10px; font-size:0.8rem; padding-top: 4px;" title="Remover experiência">❌</span>`;
         ul.style.marginBottom = "1vh";
         ListaCargo.appendChild(ul);
     });
-}
+};
 
 function limparCamposExp() {
     document.getElementById("Cargo").value = "";
@@ -125,51 +186,58 @@ function limparCamposExp() {
     document.getElementById("DescricaoAtividades").value = "";
 }
 
-//-------------------------Quarta div Habilidades técnicas---------------------//
 
+// --- HABILIDADES TÉCNICAS ---
 let H2HabilidadesCv = document.getElementById('H2HabilidadesCv');
-let HabilidadesCV = document.getElementById('HabilidadesCv'); // Correção do ID no HTML
+let HabilidadesCV = document.getElementById('HabilidadesCv'); 
 let btnHabilidades = document.getElementById('btnHabilidades');
-let listaHabilidades = []; // Array para armazenar as habilidades
 
 btnHabilidades.addEventListener("click", (e) => {
     e.preventDefault();
-    atualizarListaHab();
-    limparCamposHabilidade()// Limpa após adicionar
-});
-
-function atualizarListaHab() {
-    let InputHabilidades = document.getElementById('Habilidades'); // O input de texto
-    let H2Habilidades = document.getElementById('H2Habilidades'); // Título H2
-
-    // 1. Pega o VALOR do input (.value)
+    let InputHabilidades = document.getElementById('Habilidades');
     let textoHabilidade = InputHabilidades.value;
 
-    if (textoHabilidade.trim() === "") return; // Não adiciona vazio
+    if (textoHabilidade.trim() === "") return;
 
-    // 2. Adiciona ao Array
-    listaHabilidades.push(textoHabilidade);
+    window.listaHabilidades.push(textoHabilidade);
+    atualizarListaHabDOM();
+    limparCamposHabilidade();
+    window.salvarDadosLocalmente();
+});
 
-    // 3. Atualiza o DOM
-    H2Habilidades.style.display = 'block';
+function atualizarListaHabDOM() {
+    let H2Habilidades = document.getElementById('H2Habilidades');
+    HabilidadesCV.innerHTML = "";
 
-    const ul = document.createElement("ul");
-    ul.innerHTML = `<li>${textoHabilidade}</li>`;
-    ul.style.listStyleType = "none"; // Adiciona o estilo de lista
-    HabilidadesCV.appendChild(ul);
+    if (window.listaHabilidades.length > 0) {
+        H2Habilidades.style.display = 'block';
+    } else {
+        H2Habilidades.style.display = 'none';
+    }
+
+    window.listaHabilidades.forEach((hab, index) => {
+        const ul = document.createElement("ul");
+        ul.style.position = 'relative';
+        ul.style.display = 'flex';
+        ul.style.alignItems = 'center';
+        ul.style.justifyContent = 'space-between';
+        ul.style.margin = '4px 0';
+        ul.innerHTML = `<li>• ${hab}</li>
+        <span class="btn-remover-item" onclick="window.removerHabilidade(${index})" style="cursor:pointer; color:#e74c3c; margin-left:10px; font-size:0.8rem;" title="Remover habilidade">❌</span>`;
+        ul.style.listStyleType = "none";
+        HabilidadesCV.appendChild(ul);
+    });
 }
 
-// 4. Função para limpar o campo
-function limparCamposHabilidade() {
-    document.getElementById('Habilidades').value = "";
-}
 
+// --- HABILITAÇÃO ---
 const btnAdicionarHabilitação = document.getElementById('btnAdicionarHabilitação');
-let Habilitação = document.getElementById('HabilitaçãoCv'); // Correção do ID no HTML
+let Habilitação = document.getElementById('HabilitaçãoCv'); 
 
 btnAdicionarHabilitação.addEventListener("click", (e) => {
-    e.preventDefault(); // Evita o envio do formulário  
-    Hablitação();// Chama a função para atualizar a habilitação no currículo
+    e.preventDefault(); 
+    Hablitação();
+    window.salvarDadosLocalmente();
 });
 
 let habilitaçãoA = document.getElementById('A');
@@ -177,71 +245,96 @@ let habilitaçãoB = document.getElementById('B');
 let habilitaçãoAB = document.getElementById('A/B');
 let habilitaçãoOutros = document.getElementById('Outros');
 let InputOutros = document.getElementById('InputOutros');
+
 function Hablitação(){
     if(habilitaçãoA.checked){
         Habilitação.style.display = 'block';
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> A`;
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> Categoria A`;
     } else if(habilitaçãoB.checked){
         Habilitação.style.display = 'block';
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> B`;
-
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> Categoria B`;
     } else if(habilitaçãoAB.checked){
         Habilitação.style.display = 'block';
-        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> A/B`;
+        Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> Categoria A/B`;
     } else if(habilitaçãoOutros.checked){
         Habilitação.style.display = 'block';
         Habilitação.innerHTML = `<strong>Habilitação:</strong> <br> ${InputOutros.value}`;
+    } else {
+        Habilitação.style.display = 'none';
+    }
+}
 
-    } 
-};
 function mostrarInputOutros(){
-    
     if(habilitaçãoOutros.checked){
         DivInputOutros.style.display = 'block';
-    }else if(habilitaçãoA.checked || habilitaçãoB.checked || habilitaçãoAB.checked){
+    } else {
         DivInputOutros.style.display = 'none';
     }
-     else {
-       DivInputOutros.style.display = 'none';
+}
+
+// Atualizar habilitação ao digitar no campo "Outros"
+InputOutros.addEventListener('input', () => {
+    if (habilitaçãoOutros.checked) {
+        Hablitação();
+        window.salvarDadosLocalmente();
     }
-};
-
-let btnAdicionarInfoAdicional = document.getElementById('btnAdicionarInfoAdicional');
-let IformacoesAdd = []; // Array para armazenar as informações adicionais
-btnAdicionarInfoAdicional.addEventListener("click", (e) => {
-    e.preventDefault(); // Evita o envio do formulário
-    atualizarIformações(); // Atualiza a lista exibida
-    limparCamposHab(); // Limpa os campos após adicionar
 });
-// Função para atualizar a lista de habilidades
-function atualizarIformações() {
-    let Informacoes = document.getElementById('Informacoes');
+
+window.Hablitação = Hablitação;
+window.mostrarInputOutros = mostrarInputOutros;
+
+
+// --- INFORMAÇÕES ADICIONAIS ---
+let btnAdicionarInfoAdicional = document.getElementById('btnAdicionarInfoAdicional');
+
+btnAdicionarInfoAdicional.addEventListener("click", (e) => {
+    e.preventDefault();
     let InformaçõesAdicionais = document.getElementById('InformaçõesAdicionais').value;
+
+    if (InformaçõesAdicionais.trim() === "") return;
+
+    window.listaInfoAdicional.push(InformaçõesAdicionais);
+    atualizarInfoAdicionalDOM();
+    limparCamposHab();
+    window.salvarDadosLocalmente();
+});
+
+function atualizarInfoAdicionalDOM() {
+    let Informacoes = document.getElementById('Informacoes');
     let InformaçõesAdicionaisCV = document.getElementById('InformaçõesAdicionaisCv');
-    let Informaçoes = [];
-    Informacoes.style.display = 'block';
+    InformaçõesAdicionaisCV.innerHTML = "";
 
-    if (InformaçõesAdicionais.trim() === "") return; // Não adiciona vazio
+    if (window.listaInfoAdicional.length > 0) {
+        Informacoes.style.display = 'block';
+    } else {
+        Informacoes.style.display = 'none';
+    }
 
-    Informaçoes.push(InformaçõesAdicionais);
-    InformaçõesAdicionaisCV.style.display = 'block';
-    InformaçõesAdicionaisCV.style.marginBottom = "1vh";
-    const ul = document.createElement("ul");
-    ul.innerHTML = `<li>${InformaçõesAdicionais}</li>`;
-    ul.style.listStyleType = "none"; // Adiciona o estilo de lista
-    InformaçõesAdicionaisCV.appendChild(ul);
-    
+    window.listaInfoAdicional.forEach((info, index) => {
+        const ul = document.createElement("ul");
+        ul.style.position = 'relative';
+        ul.style.display = 'flex';
+        ul.style.alignItems = 'center';
+        ul.style.justifyContent = 'space-between';
+        ul.style.margin = '4px 0';
+        ul.innerHTML = `<li>• ${info}</li>
+        <span class="btn-remover-item" onclick="window.removerInfoAdicional(${index})" style="cursor:pointer; color:#e74c3c; margin-left:10px; font-size:0.8rem;" title="Remover informação">❌</span>`;
+        ul.style.listStyleType = "none";
+        InformaçõesAdicionaisCV.appendChild(ul);
+    });
 }
 
 function limparCamposHab() {
     document.getElementById("InformaçõesAdicionais").value = "";
-    
 }
 
-//-------------------------AnoAtual do Rodapé---------------------//
+
+// --- ANO ATUAL DO RODAPÉ ---
 let DivFooterP = document.getElementById('DivFooterP@');  
 let data = new Date();
 let anoAtual = data.getFullYear();
-DivFooterP.innerHTML = `© ${anoAtual} Kel Designer. Todos os direitos reservados.`;
+if (DivFooterP) {
+    DivFooterP.innerHTML = `© ${anoAtual} Kel Designer. Todos os direitos reservados.`;
+}
 
 
